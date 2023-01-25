@@ -247,3 +247,28 @@ transform: scale(1.1);
     font-size: 15px;
     
 }
+.swiper-btn{
+    display: flex;
+}
+.swiper-button-prev,.swiper-button-next{
+    position: static !important;
+    margin-left: 10px;
+   color: var(--text-color) !important;
+   
+}
+.swiper-button-prev::after,.swiper-button-next::after{
+    font-size: 18px !important;
+    padding-top: 22px;
+}
+.movies .heading{
+    padding: 10px 14px;
+}
+.movies-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(247px,1fr));
+    gap: 25px ;
+}
+.movies-content .movie-box:hover .movie-box-img{
+    transform: scale(1.1);
+    transition: .3s;
+}

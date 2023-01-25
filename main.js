@@ -73,7 +73,7 @@ const movieImges = [
   },
 ];
 const creatPopulerSection = function () {
-  for (let index = 0; index < movieImges.length; index++) {
+  for (let index = 0; index < 8; index++) {
     const element = movieImges[index];
     const slideDiv = $(`<div class="swiper-slide"></div>`);
     const boxDiv = $(`<div class="movie-box"></div>`);
@@ -84,6 +84,7 @@ const creatPopulerSection = function () {
   <span class="movie-type">${element.type}</span>
   <a href="#" class="watch-btn play-btn">
     <i class="bx bx-right-arrow"></i>
+    <span>Watch the trailer</span>
   </a>
 </div>`)
     );
@@ -93,19 +94,66 @@ const creatPopulerSection = function () {
 };
 
 creatPopulerSection();
+const movieContent = $(`.movies-content`)
+const moviePage = function(){
+  populerSection.fadeOut()
+  homeSection.fadeOut()
+  movieContent.fadeOut()
+  
+}
+const creatMovieSection = function () {
+  for (let index = 0; index < movieImges.length; index++) {
+    const element = movieImges[index];
+    const boxDiv = $(`<div class="movie-box"></div>`);
+    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
+    boxDiv.append(
+      $(`<div class="box-text">
+  <h2 class="movie-title">${element.title}</h2>
+  <span class="movie-type">${element.type}</span>
+  <a href="#" class="watch-btn play-btn">
+    <i class="bx bx-right-arrow"></i>
+    <span>Watch the trailer</span>
+  </a>
+</div>`)
+    );
+    boxDiv.on("click",moviePage)
+    movieContent.append(boxDiv)
+  }
+}
+creatMovieSection()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const swiper = new Swiper(".populer-content", {
   slidesPerView: 1,
   spaceBetween: 10,
   autoplay: {
-    delay: 1500,
+    delay: 9991500,
     disableOnInteraction: false,
   },
   pegination: {
     el: ".swiper-pagination",
     clickable: true,
   },
-  breakpoints: {
+  navigation:{
+    nextEl:".swiper-button-next",
+    prevEl:".swiper-button-prev"
+  }
+  ,breakpoints: {
     280: {
       slidesPerView: 1,
       spaceBetween: 10,
