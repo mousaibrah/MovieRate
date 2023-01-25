@@ -16,6 +16,14 @@
     --container-color :#2d2e37;
     --text-color:#fcfeff;
 }
+/* Custom Scrollbar  */
+html::-webkit-scrollbar{
+    width: 8px;
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+}
 /* a links */
 a{
     text-decoration: none;
@@ -316,4 +324,76 @@ transform: scale(1.1);
         background: #2d2e37ae !important;
         max-width: fit-content;
     }
+    .next-page{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       margin-top: 30px;
+        padding-bottom: 50px;
+
+    }
+  .next-btn{
+    background: var(--main-color);
+   color: var(--body-color);
+    padding: 10px 10px;
+    font-weight: 500;
+
+  }
+  .next-btn:hover{
+    background-color: var(--hover-color);
+    transition: 0.3s all linear;
+  }
+ .about-movie{
+display: none;
  
+ }
+ .movie-title-about{
+    color: var(--main-color);
+ }
+ .about-movie p{
+    max-width: 600px;
+    font-size: 15px;
+    margin: 10px 0;
+ }
+ .cast-heading{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--main-color);
+ }
+  .cast img{
+    width: 150px !important;
+    height: 180px !important;
+    object-fit: cover;
+    object-position: center;
+ }
+ .cast{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,150px));
+    gap: 15px;
+ }
+
+ /* media responsive */
+ 
+ @media (max-width: 1170px){
+    .navbar{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        transform: translateY(0);
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 1px;
+        padding: 10px;
+        border-top:1px solid hsl(200 100%  99% /5%) ;
+        background: var(--container-color)
+    }
+ }
+
+ @media (max-width: 1060px){
+    .container{
+        margin: 0 auto;
+        width: 95%;
+    }
+ }

@@ -4,9 +4,12 @@ const movieSection = $(`.movies`);
 const homeATag = $(`#home-a-tag`);
 const populerSection = $(`.populer`);
 const playPage = $(`.play-container`);
-const playTrailer = $(`.play-trailer`)
+const playTrailer = $(`.play-trailer`);
+const aboutMovie = $(`.about-movie`);
 const swiperWraper = $(`.swiper-wrapper`);
 const movieContent = $(`.movies-content`);
+const tags = [$(`#home-a-tag`), $(`#trend-a-tag`), $(`#movie-a-tag`)];
+const nextPage = $(`.next-page`);
 homeSection.append($(`<img src="./img/john-wick.jpg" class="home-img"/>`));
 homeSection.append(
   $(` <div class="home-text">
@@ -18,90 +21,211 @@ homeSection.append(
 </a>
 </div>`)
 );
-
-homeATag.on("click", () => {
-  populerSection.css("display", "block");
-  movieSection.css("display", "block");
-  homeSection.css("display", "flex");
-});
-
-
+for (let index = 0; index < tags.length; index++) {
+  const element = tags[index];
+  element.on("click", () => {
+    $(`.populer,.movies`).css("display", "block");
+    $(`.home,.next-page`).css("display", "flex");
+    $(`.play-container,.about-movie`).css("display", "none");
+  });
+}
 
 const movieImges = [
   {
-    src: "./img/movie1.jpg",
+    src: "./img/popular-movie-1.jpg",
     title: "Wrath Of Man",
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
-    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
+    trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
+    about:
+      "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
+    cast: [
+      { name: "Jason Statham", src: "./img/jason.jpeg" },
+      { name: "Scott Eastwood", src: "./img/Scott.jpg" },
+      { name: "Niamh Algar", src: "./img/Niamh.png" },
+      {
+        name: "Josh Hartnett",
+        src: "./img/Josh.jpg",
+      },
+      {
+        name: "Jeffrey Donovan",
+        src: "./img/jeffrey.jpg",
+      },
+    ],
   },
   {
-    src: "./img/movie1.jpg",
+    src: "./img/popular-movie-2.jpg",
     title: "Wrath Of Man",
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
-    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
+    trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
+    about:
+      "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
+    cast: [
+      { name: "Jason Statham", src: "./img/jason.jpeg" },
+      { name: "Scott Eastwood", src: "./img/Scott.jpg" },
+      { name: "Niamh Algar", src: "./img/Niamh.png" },
+      {
+        name: "Josh Hartnett",
+        src: "./img/Josh.jpg",
+      },
+      {
+        name: "Jeffrey Donovan",
+        src: "./img/jeffrey.jpg",
+      },
+    ],
   },
   {
-    src: "./img/movie1.jpg",
+    src: "./img/popular-movie-3.jpg",
     title: "Wrath Of Man",
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
-    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
+    trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
+    about:
+      "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
+    cast: [
+      { name: "Jason Statham", src: "./img/jason.jpeg" },
+      { name: "Scott Eastwood", src: "./img/Scott.jpg" },
+      { name: "Niamh Algar", src: "./img/Niamh.png" },
+      {
+        name: "Josh Hartnett",
+        src: "./img/Josh.jpg",
+      },
+      {
+        name: "Jeffrey Donovan",
+        src: "./img/jeffrey.jpg",
+      },
+    ],
   },
   {
-    src: "./img/movie1.jpg",
+    src: "./img/popular-movie-4.jpg",
     title: "Wrath Of Man",
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
-    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
+    trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
+    about:
+      "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
+    cast: [
+      { name: "Jason Statham", src: "./img/jason.jpeg" },
+      { name: "Scott Eastwood", src: "./img/Scott.jpg" },
+      { name: "Niamh Algar", src: "./img/Niamh.png" },
+      {
+        name: "Josh Hartnett",
+        src: "./img/Josh.jpg",
+      },
+      {
+        name: "Jeffrey Donovan",
+        src: "./img/jeffrey.jpg",
+      },
+    ],
   },
   {
-    src: "./img/movie1.jpg",
+    src: "./img/popular-movie-5.jpg",
     title: "Wrath Of Man",
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
-    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
+    trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
+    about:
+      "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
+    cast: [
+      { name: "Jason Statham", src: "./img/jason.jpeg" },
+      { name: "Scott Eastwood", src: "./img/Scott.jpg" },
+      { name: "Niamh Algar", src: "./img/Niamh.png" },
+      {
+        name: "Josh Hartnett",
+        src: "./img/Josh.jpg",
+      },
+      {
+        name: "Jeffrey Donovan",
+        src: "./img/jeffrey.jpg",
+      },
+    ],
   },
   {
-    src: "./img/movie1.jpg",
+    src: "./img/popular-movie-6.jpg",
     title: "Wrath Of Man",
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
-    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
+    trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
+    about:
+      "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
+    cast: [
+      { name: "Jason Statham", src: "./img/jason.jpeg" },
+      { name: "Scott Eastwood", src: "./img/Scott.jpg" },
+      { name: "Niamh Algar", src: "./img/Niamh.png" },
+      {
+        name: "Josh Hartnett",
+        src: "./img/Josh.jpg",
+      },
+      {
+        name: "Jeffrey Donovan",
+        src: "./img/jeffrey.jpg",
+      },
+    ],
   },
   {
-    src: "./img/movie1.jpg",
+    src: "./img/popular-movie-7.jpg",
     title: "Wrath Of Man",
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
-    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
+    trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
+    about:
+      "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
+    cast: [
+      { name: "Jason Statham", src: "./img/jason.jpeg" },
+      { name: "Scott Eastwood", src: "./img/Scott.jpg" },
+      { name: "Niamh Algar", src: "./img/Niamh.png" },
+      {
+        name: "Josh Hartnett",
+        src: "./img/Josh.jpg",
+      },
+      {
+        name: "Jeffrey Donovan",
+        src: "./img/jeffrey.jpg",
+      },
+    ],
   },
   {
-    src: "./img/movie1.jpg",
+    src: "./img/popular-movie-8.jpg",
     title: "Wrath Of Man",
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
-    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
+    trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
+    about:
+      "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
+    cast: [
+      { name: "Jason Statham", src: "./img/jason.jpeg" },
+      { name: "Scott Eastwood", src: "./img/Scott.jpg" },
+      { name: "Niamh Algar", src: "./img/Niamh.png" },
+      {
+        name: "Josh Hartnett",
+        src: "./img/Josh.jpg",
+      },
+      {
+        name: "Jeffrey Donovan",
+        src: "./img/jeffrey.jpg",
+      },
+    ],
   },
 ];
 const creatPlayPage = function () {
-  const indexById = $(this).attr("id")
-  const element = movieImges[indexById]
-  populerSection.css("display", "none");
-  movieSection.css("display", "none");
-  homeSection.css("display", "none");
-  playPage.css("display", "block");
-  playTrailer.append($(`<img src="${element.src}" class="play-img"/>`))
-  playTrailer.append($(` <div class="play-text">
+  const indexById = $(this).attr("id");
+  const element = movieImges[indexById];
+  $(`.populer,.movies,.home,.next-page`).css("display", "none");
+  $(`.play-container,.about-movie`).css("display", "block");
+  playTrailer.empty();
+  aboutMovie.empty();
+  playTrailer.append($(`<img src="${element.src}" class="play-img"/>`));
+  playTrailer.append(
+    $(` <div class="play-text">
   <h2 class="movie-title">${element.title}</h2>
   <span class="movie-type id"movie-type-play"">${element.type}</span>
  <div class="rating"></div>
@@ -109,15 +233,28 @@ const creatPlayPage = function () {
     <i  class="bx bx-right-arrow"></i>
     <span class="trailer-span">Watch the trailer</span>
   </a>
-
-</div>`))
-
-$(`.rating`).empty()
-for (let index = 0; index < element.rate; index++) {
   
-  $(`.rating`).append($(`<i class='bx bxs-star' ></i>`))
+</div>`)
+  );
+  aboutMovie.append(
+    $(`<h2 class="movie-title-about">${element.title}</h2>
+<p>${element.about}</p>
+<h2 class="cast-heading">Movie Cast</h2>
+<div class="cast"></div>
+</div>`)
+  );
+
+  for (let index = 0; index < element.cast.length; index++) {
+    const element_1 = element.cast[index];
+    $(`.cast`).append(
+      $(`<div class="cast-box"><img src="${element_1.src}" class="cast-img>"
+  <span class="cast-title">${element_1.name}</span></div>`)
+    );
   }
-   
+
+  for (let index = 0; index < element.rate; index++) {
+    $(`.rating`).append($(`<i class='bx bxs-star' ></i>`));
+  }
 };
 
 const creatPopulerSection = function () {
@@ -144,7 +281,6 @@ const creatPopulerSection = function () {
 
 creatPopulerSection();
 
-
 const creatMovieSection = function () {
   for (let index = 0; index < movieImges.length; index++) {
     const element = movieImges[index];
@@ -170,7 +306,7 @@ const swiper = new Swiper(".populer-content", {
   slidesPerView: 1,
   spaceBetween: 10,
   autoplay: {
-    delay: 9991500,
+    delay: 1500,
     disableOnInteraction: false,
   },
   pegination: {

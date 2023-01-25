@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <!-- Link Swiper -->
     <link rel="stylesheet" href="./swiper-bundle.min.css" />
-    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/icon.webp" type="image/x-icon" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -42,13 +42,15 @@
           <a href="#home" id="home-a-tag" class="nav-link nav-active">
             <i class="bx bx-home-alt-2"></i>
             <span class="navLinkTitle">Home</span> </a
-          ><a href="#home" class="nav-link">
+          ><a href="#popular" class="nav-link" id="trend-a-tag">
             <i class="bx bxs-hot"></i>
             <span class="navLinkTitle">Trending</span> </a
-          ><a href="#home" class="nav-link">
+          >
+          <!-- <a href="#home" class="nav-link">
             <i class="bx bx-compass"></i>
             <span class="navLinkTitle">Explore</span> </a
-          ><a href="#home" class="nav-link">
+          > -->
+          <a href="#movies" class="nav-link" id="movie-a-tag">
             <i class="bx bx-movie"></i>
             <span class="navLinkTitle">Movies</span> </a
           ><a href="#home" class="nav-link">
@@ -80,11 +82,17 @@
   <div class="heading">
         <h2 class="heading-title">Movie</h2>
          </div>
-         <div class="movies-content"></div>
+         <div class="movies-content" id="movies"></div>
 </section>
 <section class="play-container container">
  <div class="play-trailer"></div>
+ 
 </section>
+<div class="about-movie container play-container"></div>
+<!-- Next Page Button -->
+<div class="next-page">
+  <a href="#" class="next-btn">Next Page</a>
+</div>
     <!-- Link To Js Files -->
     <script src="./swiper-bundle.min.js"></script>
     <script src="main.js"></script>
