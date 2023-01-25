@@ -1,0 +1,25 @@
+header                                                        ==>(nav,container)
+header(logo a tag)                                            ==>(logo)
+header(search div)                                            ==>(search-box)
+header(input id )                                             ==>(#search-input)
+header(user)                                                  ==>(user)==>(user img)=>(user-img)
+header(nav home trending ...)                                 ==>(navbar)
+header(home btn)                                              ==>(nav-link,nav-active)
+header(rest of btns)                                          ==>(nav-link)                                          
+header(text inside the nav btns)                              ==>(navLinkTitle)
+section1                                                      ==>(home container)&(#home)
+section1(home image)                                          ==>(home-img)
+section1(homediv text)                                        ==>(home-text)
+section1(h1 inside home div)                                  ==>(home-title)
+section1(watch btn traller)                                   ==>(watch-btn)
+*************************************Populer Section Start**************************************
+section2                                                      ==>(populer container)&&(#popular)
+section2(heading)                                             ==>(heading)  
+section2(h2 inside heading)                                   ==>(heading-title)
+******************************************Content***************************************
+section2,(div Content)                                        ==>(populer-content swiper)
+section2,(div Content)=>div                                   ==>(swiper-wrapper)
+Movie Boxes==>(swiper-slide)==>(img)(div)  img:(movie-box-img) div: (box-text)=( (h2)(span) (watch btn))==>
+h2:(movie-title)  span:(movie-type) watchbtn :(watch-btn play-btn)
+btns pagination                                               ==>(swiper-pagination)
+
