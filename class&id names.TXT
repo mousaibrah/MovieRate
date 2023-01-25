@@ -22,4 +22,9 @@ section2,(div Content)=>div                                   ==>(swiper-wrapper
 Movie Boxes==>(swiper-slide)==>(img)(div)  img:(movie-box-img) div: (box-text)=( (h2)(span) (watch btn))==>
 h2:(movie-title)  span:(movie-type) watchbtn :(watch-btn play-btn)
 btns pagination                                               ==>(swiper-pagination)
-
+********************************************movie content*****************************'
+section                                                       ==>(class="movies container" id="movies")
+box classes                                                   (movie-type,movie-title,box-text,movie-box-img,movie-box)
+********************************************play content*****************************'
+section                                                      ==>(play-container container)
+movie play div                                                ==>(movie-title,movie-type,rating,play-text,play-img)
