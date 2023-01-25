@@ -4,6 +4,7 @@ const movieSection = $(`.movies`);
 const homeATag = $(`#home-a-tag`);
 const populerSection = $(`.populer`);
 const playPage = $(`.play-container`);
+const playTrailer = $(`.play-trailer`)
 const swiperWraper = $(`.swiper-wrapper`);
 const movieContent = $(`.movies-content`);
 homeSection.append($(`<img src="./img/john-wick.jpg" class="home-img"/>`));
@@ -11,7 +12,7 @@ homeSection.append(
   $(` <div class="home-text">
 <h1 class="home-title">john wick <br />chapter 4</h1>
 <p>Relesing 24 March</p>
-<a href="#" class="watch-btn">
+<a href="./img/john-wick-trailer.mp4" class="watch-btn">
   <i class="bx bx-right-arrow"></i>
   <span>Watch the trailer</span>
 </a>
@@ -33,6 +34,7 @@ const movieImges = [
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
+    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
   },
   {
     src: "./img/movie1.jpg",
@@ -40,6 +42,7 @@ const movieImges = [
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
+    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
   },
   {
     src: "./img/movie1.jpg",
@@ -47,6 +50,7 @@ const movieImges = [
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
+    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
   },
   {
     src: "./img/movie1.jpg",
@@ -54,6 +58,7 @@ const movieImges = [
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
+    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
   },
   {
     src: "./img/movie1.jpg",
@@ -61,6 +66,7 @@ const movieImges = [
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
+    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
   },
   {
     src: "./img/movie1.jpg",
@@ -68,6 +74,7 @@ const movieImges = [
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
+    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
   },
   {
     src: "./img/movie1.jpg",
@@ -75,6 +82,7 @@ const movieImges = [
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
+    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
   },
   {
     src: "./img/movie1.jpg",
@@ -82,6 +90,7 @@ const movieImges = [
     type: "action",
     actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
+    trailer:"./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4"
   },
 ];
 const creatPlayPage = function () {
@@ -91,16 +100,18 @@ const creatPlayPage = function () {
   movieSection.css("display", "none");
   homeSection.css("display", "none");
   playPage.css("display", "block");
-  playPage.append($(`<img src="${element.src}" class="play-img"/>`))
-  playPage.append($(`<div class="play-text">
+  playTrailer.append($(`<img src="${element.src}" class="play-img"/>`))
+  playTrailer.append($(` <div class="play-text">
   <h2 class="movie-title">${element.title}</h2>
-  <span class="movie-type">${element.type}</span>
+  <span class="movie-type id"movie-type-play"">${element.type}</span>
  <div class="rating"></div>
-  <a href="#" class="watch-btn play-btn">
-    <i class="bx bx-right-arrow"></i>
-    <span>Watch the trailer</span>
+  <a href="${element.trailer}" class="watch-btn play-btn">
+    <i  class="bx bx-right-arrow"></i>
+    <span class="trailer-span">Watch the trailer</span>
   </a>
+
 </div>`))
+
 $(`.rating`).empty()
 for (let index = 0; index < element.rate; index++) {
   
@@ -108,6 +119,7 @@ for (let index = 0; index < element.rate; index++) {
   }
    
 };
+
 const creatPopulerSection = function () {
   for (let index = 0; index < 8; index++) {
     const element = movieImges[index];
@@ -118,9 +130,9 @@ const creatPopulerSection = function () {
       $(`<div class="box-text">
   <h2 class="movie-title">${element.title}</h2>
   <span class="movie-type">${element.type}</span>
-  <a href="#" class="watch-btn play-btn">
+  <a href="${element.trailer}" class="watch-btn play-btn">
     <i class="bx bx-right-arrow"></i>
-    <span>Watch the trailer</span>
+    <span class="trailer-span">Watch the trailer</span>
   </a>
 </div>`)
     );
@@ -142,9 +154,9 @@ const creatMovieSection = function () {
       $(`<div class="box-text">
   <h2 class="movie-title">${element.title}</h2>
   <span class="movie-type">${element.type}</span>
-  <a href="#" class="watch-btn play-btn">
+  <a href="${element.trailer}" class="watch-btn play-btn">
     <i class="bx bx-right-arrow"></i>
-    <span>Watch the trailer</span>
+    <span class="trailer-span">Watch the trailer</span>
   </a>
 </div>`)
     );

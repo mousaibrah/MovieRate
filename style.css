@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-padding-top: 32px;
+    user-select: none;
 
 }
 /* variable */
@@ -302,3 +303,17 @@ transform: scale(1.1);
         font-size: 22px;
         font-weight: 500;
     }
+    .rating{
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        color: var(--main-color);
+        margin-top: 4px;
+        gap: 2px;
+        padding-bottom: 4px;
+    }
+    .movie-type ,.movie-title ,.trailer-span{
+        background: #2d2e37ae !important;
+        max-width: fit-content;
+    }
+ 
