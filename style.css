@@ -402,7 +402,7 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
   gap: 15px;
 }
-
+/* Log In Page  */
 section.login-page {
   display: none;
   justify-content: center;
@@ -452,7 +452,6 @@ section.login-page {
   padding: 10px 10px;
   border: 0.6px solid var(--hover-color);
   color: #ffb33aba;
- 
 }
 .email-input:hover,
 .name-input:hover,
@@ -509,14 +508,6 @@ section.login-page {
 .submit-login {
   margin-top: 19px;
 }
-/* Fav Page */
-.add-to-fav {
-  margin-top: 15px;
-}
-.fav-page {
-  display: none;
-  padding-top: 120px;
-}
 .intro {
   width: 560px;
   height: 400px;
@@ -543,6 +534,16 @@ section.login-page {
 }
 .ok-btn:hover {
   background: linear-gradient(to top, #f8a92a, #b2e90d);
+}
+
+/*          */
+/* Fav Page */
+.add-to-fav {
+  margin-top: 15px;
+}
+.fav-page {
+  display: none;
+  padding-top: 120px;
 }
 
 /* media responsive */
@@ -608,6 +609,24 @@ section.login-page {
 }
 
 @media (max-width: 768px) {
+  .home {
+    min-height: fit-content;
+  }
+  .home-title {
+    font-size: 12px;
+  }
+  .home-text p {
+    font-size: 9px;
+  }
+  .home-text span {
+    margin-left: -9px;
+  }
+  .watch-btn .bx {
+    font-size: 15px;
+
+    width: 21px;
+    height: 21px;
+  }
   .nav {
     padding: 11px 0;
   }

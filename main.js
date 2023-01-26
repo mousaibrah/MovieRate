@@ -1,3 +1,6 @@
+//
+//
+//            JQUERY ELEMENTS
 const body = $(`body`);
 const homeSection = $(`.home`);
 const movieSection = $(`.movies`);
@@ -21,138 +24,10 @@ const newUserEmail = $(`#sign-email`);
 const newUserPass = $(`#sign-pass`);
 const userEmail = $("#log-email");
 const userPass = $(`#log-pass`);
+// Local Storage
 let userInfo = [];
 let favElements = [];
-localStorage["user"]
-  ? (userInfo = JSON.parse(localStorage.getItem("user")))
-  : userInfo;
-
-const signFunc = function () {
-  const logObj = {
-    userName: newUserName.val(),
-    email: newUserEmail.val(),
-    password: newUserPass.val(),
-  };
-  if (logObj.userName) {
-    userInfo.push(logObj);
-    localStorage.setItem("user", JSON.stringify(userInfo));
-    homePage();
-  } else {
-    for (let index = 0; index < userInfo.length; index++) {
-      const element = userInfo[index];
-      if (
-        element.email !== userEmail.val() &&
-        element.password !== userPass.val()
-      ) {
-        console.log("hello world");
-        $(`.pass-input,.email-input`).css({"border-color": "#ff0000ba", 
-        "border-width":"0.6px", 
-        "border-style":"solid"});
-      } else {
-        homePage();
-      }
-    }
-  }
-};
-
-submitBtn.on("click", signFunc);
-
-homeSection.append($(`<img src="./img/john-wick.jpg" class="home-img"/>`));
-homeSection.append(
-  $(` <div class="home-text">
-<h1 class="home-title">john wick <br />chapter 4</h1>
-<p>Relesing 24 March</p>
-<a href="./img/john-wick-trailer.mp4" class="watch-btn">
-  <i class="bx bx-right-arrow"></i>
-  <span>Watch the trailer</span>
-</a>
-</div>`)
-);
-$(`.ok-btn`).on("click", () => {
-  $(`.intro`).css("display", "none");
-  signFlip.css("display", "block");
-});
-
-localStorage["fav"]
-  ? (favElements = JSON.parse(localStorage.getItem("fav")))
-  : favElements;
-
-const signPage = () => {
-  populerSection.hide();
-  movieSection.hide();
-  homeSection.hide();
-  nextPage.hide();
-  playPage.hide();
-  aboutMovie.hide();
-  favPage.hide();
-  signFlip.hide();
-  logInPage.css("display", "grid");
-  $(`.intro`).css("display", "flex");
-
-$(`.pass-input,.email-input`).css({"border-color": "#f8a92a", 
-"border-width":"0.6px", 
-"border-style":"solid"})};
-
-favTag.on("click", function () {
-  populerSection.hide();
-  movieSection.hide();
-  homeSection.hide();
-  nextPage.hide();
-  playPage.hide();
-  aboutMovie.hide();
-  favPage.show();
-  logInPage.hide();
-  $(`.fav-page .movies-content`).empty();
-
-  for (let index = 0; index < favElements.length; index++) {
-    const element = favElements[index];
-
-    const boxDiv = $(`<div class="movie-box" id="${element.id}"></div>`);
-    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
-    boxDiv.append(
-      $(`<div class="box-text">
-  <h2 class="movie-title">${element.title}</h2>
-  <span class="movie-type">${element.type}</span>
-  <a href="${element.trailer}" class="watch-btn play-btn">
-    <i class="bx bx-right-arrow"></i>
-    <span class="trailer-span">Watch the trailer</span>
-  </a>
-</div>`)
-    );
-    boxDiv.on("click", creatPlayPage);
-    $(`.fav-page .movies-content`).append(boxDiv);
-  }
-});
-userImg.on("click", signPage);
-$(`.sign-up-btn`).on("click", () => {
-  signFlip.css("transform", "rotateY(180deg)");
-});
-$(`.sign-in-btn`).on("click", () => {
-  signFlip.css("transform", "rotateY(0)");
-});
-const homePage = () => {
-  populerSection.show();
-  movieSection.show();
-  homeSection.show();
-  nextPage.show();
-  playPage.hide();
-  aboutMovie.hide();
-  logInPage.hide();
-  favPage.hide();
-};
-for (let index = 0; index < tags.length; index++) {
-  const element = tags[index];
-  element.on("click", homePage);
-}
-const addToFav = function () {
-  const indexById = $(this).attr("id");
-  movieImges[indexById].id = indexById;
-
-  favElements.push(movieImges[indexById]);
-
-  localStorage.setItem("fav", JSON.stringify(favElements));
-};
-
+// Data Variable
 const movieImges = [
   {
     src: "./img/popular-movie-1.jpg",
@@ -340,6 +215,63 @@ const movieImges = [
   },
 ];
 
+// Creat Home Page
+const creatHomePage = () => {
+  homeSection.append($(`<img src="./img/john-wick.jpg" class="home-img"/>`));
+  homeSection.append(
+    $(` <div class="home-text">
+<h1 class="home-title">john wick <br />chapter 4</h1>
+<p>Relesing 24 March</p>
+<a href="./img/john-wick-trailer.mp4" class="watch-btn">
+  <i class="bx bx-right-arrow"></i>
+  <span>Watch the trailer</span>
+</a>
+</div>`)
+  );
+};
+// Creat Populer Section
+const creatPopulerSection = function () {
+  for (let index = 0; index < 8; index++) {
+    const element = movieImges[index];
+    const slideDiv = $(`<div class="swiper-slide"></div>`);
+    const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
+    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
+    boxDiv.append(
+      $(`<div class="box-text">
+  <h2 class="movie-title">${element.title}</h2>
+  <span class="movie-type">${element.type}</span>
+  <a href="${element.trailer}" class="watch-btn play-btn">
+    <i class="bx bx-right-arrow"></i>
+    <span class="trailer-span">Watch the trailer</span>
+  </a>
+</div>`)
+    );
+    boxDiv.on("click", creatPlayPage);
+    slideDiv.append(boxDiv);
+    swiperWraper.append(slideDiv);
+  }
+};
+// Creat Movie Section
+const creatMovieSection = function () {
+  for (let index = 0; index < movieImges.length; index++) {
+    const element = movieImges[index];
+    const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
+    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
+    boxDiv.append(
+      $(`<div class="box-text">
+  <h2 class="movie-title">${element.title}</h2>
+  <span class="movie-type">${element.type}</span>
+  <a href="${element.trailer}" class="watch-btn play-btn">
+    <i class="bx bx-right-arrow"></i>
+    <span class="trailer-span">Watch the trailer</span>
+  </a>
+</div>`)
+    );
+    boxDiv.on("click", creatPlayPage);
+    $(`.movies .movies-content`).append(boxDiv);
+  }
+};
+// Creat Play Page
 const creatPlayPage = function () {
   const indexById = $(this).attr("id");
   console.log(this);
@@ -391,12 +323,23 @@ const creatPlayPage = function () {
     $(`.rating`).append($(`<i class='bx bxs-star' ></i>`));
   }
 };
+// Creat Favourite Page
 
-const creatPopulerSection = function () {
-  for (let index = 0; index < 8; index++) {
-    const element = movieImges[index];
-    const slideDiv = $(`<div class="swiper-slide"></div>`);
-    const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
+const creatFavPage = () => {
+  populerSection.hide();
+  movieSection.hide();
+  homeSection.hide();
+  nextPage.hide();
+  playPage.hide();
+  aboutMovie.hide();
+  favPage.show();
+  logInPage.hide();
+  $(`.fav-page .movies-content`).empty();
+
+  for (let index = 0; index < favElements.length; index++) {
+    const element = favElements[index];
+
+    const boxDiv = $(`<div class="movie-box" id="${element.id}"></div>`);
     boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
     boxDiv.append(
       $(`<div class="box-text">
@@ -409,34 +352,103 @@ const creatPopulerSection = function () {
 </div>`)
     );
     boxDiv.on("click", creatPlayPage);
-    slideDiv.append(boxDiv);
-    swiperWraper.append(slideDiv);
+    $(`.fav-page .movies-content`).append(boxDiv);
   }
 };
+// Creat Sign Page
+const creatSignPage = () => {
+  populerSection.hide();
+  movieSection.hide();
+  homeSection.hide();
+  nextPage.hide();
+  playPage.hide();
+  aboutMovie.hide();
+  favPage.hide();
+  signFlip.hide();
+  logInPage.css("display", "grid");
+  $(`.intro`).css("display", "flex");
+  $(`.pass-input,.email-input`).css({ "border": "0.6px solid #f8a92a" });
+};
 
+// Return Home Btn
+const returnHomeBtn = () => {
+  populerSection.show();
+  movieSection.show();
+  homeSection.show();
+  nextPage.show();
+  playPage.hide();
+  aboutMovie.hide();
+  logInPage.hide();
+  favPage.hide();
+};
+// Local Storage
+localStorage["user"]
+  ? (userInfo = JSON.parse(localStorage.getItem("user")))
+  : userInfo;
+// Check For User Login
+const checkForUserLogin = () => {
+  const logObj = {
+    userName: newUserName.val(),
+    email: newUserEmail.val(),
+    password: newUserPass.val(),
+  };
+  if (logObj.userName) {
+    userInfo.push(logObj);
+    localStorage.setItem("user", JSON.stringify(userInfo));
+    homePage();
+  } else {
+    for (let index = 0; index < userInfo.length; index++) {
+      const element = userInfo[index];
+      if (
+        element.email !== userEmail.val() &&
+        element.password !== userPass.val()
+      ) {
+        $(`.pass-input,.email-input`).css({ "border": "0.6px solid #ff0000ba" });
+      } else {
+        homePage();
+      }
+    }
+  }
+};
+// Welcome Message
+const welomeMessage = () => {
+  $(`.intro`).css("display", "none");
+  signFlip.css("display", "block");
+};
+
+//
+// Local Storage
+localStorage["fav"]
+  ? (favElements = JSON.parse(localStorage.getItem("fav")))
+  : favElements;
+// Add To Fav Btn
+const addToFav = function () {
+  const indexById = $(this).attr("id");
+  movieImges[indexById].id = indexById;
+  favElements.push(movieImges[indexById]);
+  localStorage.setItem("fav", JSON.stringify(favElements));
+};
+
+// Click Event
+$(`.sign-up-btn`).on("click", () => {
+  signFlip.css("transform", "rotateY(180deg)");
+});
+$(`.sign-in-btn`).on("click", () => {
+  signFlip.css("transform", "rotateY(0)");
+});
+
+for (let index = 0; index < tags.length; index++) {
+  const element = tags[index];
+  element.on("click", returnHomeBtn);
+}
+submitBtn.on("click", checkForUserLogin);
+$(`.ok-btn`).on("click", welomeMessage);
+favTag.on("click", creatFavPage);
+userImg.on("click", creatSignPage);
+creatHomePage();
 creatPopulerSection();
-
-const creatMovieSection = function () {
-  for (let index = 0; index < movieImges.length; index++) {
-    const element = movieImges[index];
-    const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
-    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
-    boxDiv.append(
-      $(`<div class="box-text">
-  <h2 class="movie-title">${element.title}</h2>
-  <span class="movie-type">${element.type}</span>
-  <a href="${element.trailer}" class="watch-btn play-btn">
-    <i class="bx bx-right-arrow"></i>
-    <span class="trailer-span">Watch the trailer</span>
-  </a>
-</div>`)
-    );
-    boxDiv.on("click", creatPlayPage);
-    $(`.movies .movies-content`).append(boxDiv);
-  }
-};
 creatMovieSection();
-
+// Swiper Slide Show
 const swiper = new Swiper(".populer-content", {
   slidesPerView: 1,
   spaceBetween: 10,
