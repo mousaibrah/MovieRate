@@ -58,7 +58,7 @@
           <a href="#movies" class="nav-link" id="movie-a-tag">
             <i class="bx bx-movie"></i>
             <span class="navLinkTitle">Movies</span> </a
-          ><a href="#home" class="nav-link">
+          ><a href="#home" class="nav-link" id="fav-a-tag">
             <i class="bx bx-heart"></i>
             <span class="navLinkTitle">Favourite</span>
           </a>
@@ -100,7 +100,8 @@
 </div>
 <!-- Log In Section  -->
 <section class="login-page ">
- <div class="log">
+  <div class="flip-login">
+ <div class="log-in"id="sign-in">
   <h3>WELLCOME <span>BACK</span></h3>
   <label for="email">Em<span>ail</span></label>
  <input type="email" class="email-input" id="log-email" value="" placeholder="EMAIL ..">
@@ -118,16 +119,16 @@
  <p>You don't have an account ?</p>
  <button class="sign-up-btn">REGISTER</button>
 </div>
-<div class="log">
+<div class="sign-up">
   <h3>Sign<span>Up</span></h3>
   <label for="username">User<span>Name</span></label>
-  <input type="text" class="name-input" id="log-name" value="" placeholder="username ..">
+  <input type="text" class="name-input" id="sign-name" value="" placeholder="username ..">
   <label for="email">Em<span>ail</span></label>
- <input type="email" class="email-input" id="log-email" value="" placeholder="EMAIL ..">
+ <input type="email" class="email-input" id="sign-email" value="" placeholder="EMAIL ..">
  <label for="password" class="pass-label">Pass<span>word</span></label>
- <input type="password" class="pass-input" id="log-pass" value="" placeholder="password ..">
+ <input type="password" class="pass-input" id="sign-pass" value="" placeholder="password ..">
  
- <button class="submit-login">SUBMIT</button>
+ <button class="submit-login">REGISTER</button>
 
  <div class="log-in-icons">
   <p>OR</p>
@@ -135,10 +136,13 @@
   <i class='bx bxl-instagram' ></i>
   <i class='bx bxl-google'></i>
  </div>
- <p>You don't have an account ?</p>
- <button class="sign-up-btn">REGISTER</button>
+ <p>Already have an account ?</p>
+ <button class="sign-in-btn">Sign In</button>
+</div>
 </div>
 </section>
+<!-- Favourite Section -->
+<section class="fav-page container"></section>
     <!-- Link To Js Files -->
     <script src="./swiper-bundle.min.js"></script>
     <script src="main.js"></script>

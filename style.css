@@ -14,10 +14,9 @@
   --body-color: #1e1e2a;
   --container-color: #2d2e37;
   --text-color: #fcfeff;
-  --light-text-color:#050505 ;
+  --light-text-color: #050505;
 }
-.darktheme{
-
+.darktheme {
 }
 
 /* Custom Scrollbar  */
@@ -116,7 +115,7 @@ section {
   border: none;
 }
 /* theme mood  */
-.theme{
+.theme {
   background: var(--container-color);
   display: flex;
   align-items: center;
@@ -129,8 +128,6 @@ section {
   padding: 16px 11px;
   border-radius: 50%;
   color: var(--text-color);
- 
-  
 }
 /* user */
 .user {
@@ -408,100 +405,123 @@ section {
   gap: 15px;
 }
 
-
-
-section.login-page{
-  position: relative;
-  /* min-height: 470px; */
+section.login-page {
   display: grid;
-  /* grid-template-columns: 1fr; */
-justify-content: center !important;
+  justify-content: center;
   align-items: center;
-  padding-left: 80px;
-  margin-top: 80px !important;
-  border-radius: 8px;
- 
-}
- .log{
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  padding-top: 90px;
 
-  display: flex !important;
-  width: 450px;
-  height: 500px;
-  position: relative;
-  flex-direction: column;
-  align-items: center ;
-  
-  background: var(--container-color);
-  transform: translate(492px,40px);
- 
- }
- .log label{
- padding-top: 20px;
- }
-.log h3{
-  padding-top: 40px;
 }
-.log span{
+
+.flip-login{
+  width: 350px;
+   height: 650px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+
+
+}
+.sign-up{
+  transform: rotateY(180deg)
+}
+.sign-up,.log-in{
+display: flex;
+background-color: var(--container-color);
+flex-direction: column; 
+width: 100%;
+height: 100%;
+justify-content: center;
+align-items: center; 
+position: absolute;
+backface-visibility: hidden;
+}
+
+.log-in{
+  justify-self: flex-end !important;
+  
+}
+.sign-up label,.log-in span {
+  /* padding-top: 20px; */
+}
+.sign-up h3,.log-in span {
+  /* padding-top: 40px; */
+}
+.sign-up span,.log-in span {
   color: var(--hover-color);
 }
-.email-input,.pass-input,.name-input{
+.email-input,
+.pass-input,
+.name-input {
   background: transparent;
-  margin-top: 4px;
+  /* margin-top: 4px; */
   padding: 10px 10px;
   border: 0.6px solid var(--hover-color);
   color: #ffb33aba;
-  
 }
-.email-input:hover {
+.email-input:hover ,.name-input:hover,.pass-input:hover{
   transform: scale(1.1);
-  transition: .3s;
-  border: .6px solid var(--text-color);
+  transition: 0.3s;
+  border: 0.6px solid var(--text-color);
 }
 
-.log-in-icons .bx{
+.log-in-icons .bx {
   font-size: 24px;
   background: var(--main-color);
   width: 25px;
   height: 25px;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
-.log-in-icons .bxl-facebook{
+.log-in-icons .bxl-facebook {
   background: #4e5cf9;
 }
-.log-in-icons .bxl-google{
+.log-in-icons .bxl-google {
   background: linear-gradient(to top, #e94d1e, #07aa10);
-  
 }
-.log-in-icons .bxl-instagram{
+.log-in-icons .bxl-instagram {
   background: linear-gradient(to top, #eb1877, #ac10e5);
 }
-.log-in-icons p{
+.log-in-icons p {
   text-align: center;
   margin-top: 8px;
 }
-.log button{
+.log-in button,.sign-up button {
   background: var(--main-color);
   color: var(--body-color);
   padding: 10px 10px;
   font-weight: 500;
-  margin-top: 24px;
+  /* margin-top: 24px; */
 }
-.log button:hover{
+.log button:hover {
   background-color: var(--hover-color);
   transition: 0.3s all linear;
 }
-.sign-up-btn{
+.sign-up-btn {
   position: absolute;
 
-  bottom: 8px;
+  bottom: 0;
 }
+.sign-in-btn,.sign-up-btn {
+  position: absolute;
 
+  bottom: 25px;
+}
+.submit-login{
+  margin-top: 19px;
+}
+/* Fav Page */
+.add-to-fav{
+  margin-top: 15px;
+}
+.fav-page{
+  padding-top: 120px;
 
-
-
-
+}
 
 
 
@@ -540,192 +560,185 @@ justify-content: center !important;
     grid-template-columns: repeat(auto-fit, minmax(214px, 1fr));
   }
 }
-@media (max-width: 888px){
-    .nav{
-        padding: 14px 0;
-    }
-    .home{
-        min-height: 440px;
-        margin-top: 65px !important;
-
-    }
-    .home-text{
-        padding-left: 25px;
-
-    }
-    .home-title{
-        font-size: 25px;
-
-    }
-    .home-text span{
-        font-size: 10px;
-    }
-    .movie-title{
-        font-size: 15px;
-        padding-right: 30px;
-    }
-    .play-container{
-        min-height: 440px;
-        margin-top: 50px !important ;
-    }
-    .cast{
-        justify-content: center;
-    }
+@media (max-width: 888px) {
+  .nav {
+    padding: 14px 0;
+  }
+  .home {
+    min-height: 440px;
+    margin-top: 65px !important;
+  }
+  .home-text {
+    padding-left: 25px;
+  }
+  .home-title {
+    font-size: 25px;
+  }
+  .home-text span {
+    font-size: 10px;
+  }
+  .movie-title {
+    font-size: 15px;
+    padding-right: 30px;
+  }
+  .play-container {
+    min-height: 440px;
+    margin-top: 50px !important ;
+  }
+  .cast {
+    justify-content: center;
+  }
 }
 
-@media (max-width: 768px){
-    .nav{
-        padding: 11px 0;
-    }
-    section{
-        padding: 30px 0;
-    }
-    .home-img{
-        object-position: left;
-        padding-top: 10px;
-    }
-    .movie-type{
-        font-size: 15px;
-        margin-top: 2px;
-    }
-    .play-text h2 ,.rating,.play-text .movie-type ,.play-text .watch-btn{
-        font-size: 15px;
-        margin-left: -28px;
-    }
-    .about-movie p{
-        font-size: 13px;
-    }
-    .about-movie h2{
-        font-size: 18px;
-    }
-    .logo{
-        font-size: 18px;
-    }
-    .search-box{
-max-width: 180px;
-max-height: 30px;
-    }
-    .search-box .bx{
-        font-size: 16px;
-    }
-    .user-img{
-        margin-left: -23px;
-    }
+@media (max-width: 768px) {
+  .nav {
+    padding: 11px 0;
+  }
+  section {
+    padding: 30px 0;
+  }
+  .home-img {
+    object-position: left;
+    padding-top: 10px;
+  }
+  .movie-type {
+    font-size: 15px;
+    margin-top: 2px;
+  }
+  .play-text h2,
+  .rating,
+  .play-text .movie-type,
+  .play-text .watch-btn {
+    font-size: 15px;
+    margin-left: -28px;
+  }
+  .about-movie p {
+    font-size: 13px;
+  }
+  .about-movie h2 {
+    font-size: 18px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .search-box {
+    max-width: 180px;
+    max-height: 30px;
+  }
+  .search-box .bx {
+    font-size: 16px;
+  }
+  .user-img {
+    margin-left: -23px;
+  }
 }
-@media (max-width: 510px){
-    .home{
-        min-height: fit-content;
-       
-    }
-    .home-title{
-        font-size: 12px;
-        padding-top: 12px;
-    }
-    .home-text p{
-        font-size: 8px;
-    }
-    .home-text span{
-        font-size: 8px !important;
-    }
-    .bx-right-arrow{
-        width: 20px !important;
-        max-height: 20px;
-        font-size: 12px !important;
-    }
-    .watch-btn span{
-        font-size: 10px;
-    }
-    .home-text .bx{
-        margin-left: -20px;
-    }
-    .movie-title{
-        font-size: 14px;
-    }
-    .movie-type{
-        font-size: 12px;
-    }
-    .heading{
-        padding: 2px 14px;
-    }
-    .heading-title{
-        font-size: 15px;
-    }
-    .cast {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
-        gap: 15px;
-        justify-content: start;
-        padding-bottom: 100px;
-    }
-    .cast img{
-        max-width: 100px;
-        max-height: 100px;
-    }
-
-   
-}
-@media (max-width: 408px){
-    *{
-        scroll-padding-top: 80px;
-
-    }
-    .nav{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr ;
-        row-gap: 5px;
-    }
-    .search-box{
-        max-width: 100%;
-        width: 100%;
-        border-radius: 4px;
-        order: 3;
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-    .user-img{
-        margin: 0;
-    }
-    .home {
-        margin-top: 110px !important;
-    }
-    .about-movie{
-       margin-top: 43px !important;
-    }
-    .play-container{
-        margin-top: 90px !important;
-    }
-    .movie-box{
-        height: 250px;
-}
-.movies-content{
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+@media (max-width: 510px) {
+  .home {
+    min-height: fit-content;
+  }
+  .home-title {
+    font-size: 12px;
+    padding-top: 12px;
+  }
+  .home-text p {
+    font-size: 8px;
+  }
+  .home-text span {
+    font-size: 8px !important;
+  }
+  .bx-right-arrow {
+    width: 20px !important;
+    max-height: 20px;
+    font-size: 12px !important;
+  }
+  .watch-btn span {
+    font-size: 10px;
+  }
+  .home-text .bx {
+    margin-left: -20px;
+  }
+  .movie-title {
+    font-size: 14px;
+  }
+  .movie-type {
+    font-size: 12px;
+  }
+  .heading {
+    padding: 2px 14px;
+  }
+  .heading-title {
+    font-size: 15px;
+  }
+  .cast {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
     gap: 15px;
+    justify-content: start;
+    padding-bottom: 100px;
+  }
+  .cast img {
+    max-width: 100px;
+    max-height: 100px;
+  }
 }
+@media (max-width: 408px) {
+  * {
+    scroll-padding-top: 80px;
+  }
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 5px;
+  }
+  .search-box {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 4px;
+    order: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .user-img {
+    margin: 0;
+  }
+  .home {
+    margin-top: 110px !important;
+  }
+  .about-movie {
+    margin-top: 43px !important;
+  }
+  .play-container {
+    margin-top: 90px !important;
+  }
+  .movie-box {
+    height: 250px;
+  }
+  .movies-content {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
 }
 /* Small Devices */
-@media (max-width:370px){
-    .home{
-        min-height: 300px;
-    
-    }
-    .movie-box{
-        height: 285px;
-
-    }
-    .user-img{
-        width: 35px;
-        height: 35px;
-    }
-    .navbar{
-        justify-content: space-around;
-        padding: 8px 0;
-    }
-    .next-btn{
-        padding: 5px 5px;
-        margin-top: -40px;
-    }
-    .about-movie p{
-        text-align: justify;
-    }
-    
+@media (max-width: 370px) {
+  .home {
+    min-height: 300px;
+  }
+  .movie-box {
+    height: 285px;
+  }
+  .user-img {
+    width: 35px;
+    height: 35px;
+  }
+  .navbar {
+    justify-content: space-around;
+    padding: 8px 0;
+  }
+  .next-btn {
+    padding: 5px 5px;
+    margin-top: -40px;
+  }
+  .about-movie p {
+    text-align: justify;
+  }
 }
