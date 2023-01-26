@@ -10,10 +10,10 @@ const swiperWraper = $(`.swiper-wrapper`);
 const movieContent = $(`.movies-content`);
 const logInPage = $(`.login-page`);
 const userImg = $(`.user-img`);
-const favPage = $(`.fav-page`)
-const signFlip = $(`.flip-login`)
+const favPage = $(`.fav-page`);
+const signFlip = $(`.flip-login`);
 const tags = [$(`#home-a-tag`), $(`#trend-a-tag`), $(`#movie-a-tag`)];
-const favTag =$(`#fav-a-tag`)
+const favTag = $(`#fav-a-tag`);
 const nextPage = $(`.next-page`);
 homeSection.append($(`<img src="./img/john-wick.jpg" class="home-img"/>`));
 homeSection.append(
@@ -26,33 +26,45 @@ homeSection.append(
 </a>
 </div>`)
 );
-let favElements = []
-let test = JSON.parse(localStorage.getItem("fav"))
+$(`.ok-btn`).on("click", () => {
+  $(`.intro`).css("display", "none");
+  signFlip.css("display", "block");
+});
+let favElements = [];
+localStorage["fav"]
+  ? (favElements = JSON.parse(localStorage.getItem("fav")))
+  : favElements;
+
 const signPage = () => {
-  populerSection.hide()
-  movieSection.hide()
-  homeSection.hide()
-  nextPage.hide()
-  playPage.hide()
-  aboutMovie.hide()
-  favPage.hide()
-  logInPage.css("display","grid")
+  populerSection.hide();
+  movieSection.hide();
+  homeSection.hide();
+  nextPage.hide();
+  playPage.hide();
+  aboutMovie.hide();
+  favPage.hide();
+  signFlip.hide();
+  logInPage.css("display", "grid");
+  $(`.intro`).css("display", "flex");
 };
-favTag.on("click",()=>{
-  populerSection.hide()
-  movieSection.hide()
-  homeSection.hide()
-  nextPage.hide()
-  playPage.hide()
-  aboutMovie.hide()
-  favPage.show()
-  logInPage.hide()
-  $(`.fav-page .movies-content`).empty()
-   for (let index = 0; index < favElements.length; index++) {
+const test = function () {
+  console.log($(this).attr("id"));
+};
+favTag.on("click", function () {
+  populerSection.hide();
+  movieSection.hide();
+  homeSection.hide();
+  nextPage.hide();
+  playPage.hide();
+  aboutMovie.hide();
+  favPage.show();
+  logInPage.hide();
+  $(`.fav-page .movies-content`).empty();
+
+  for (let index = 0; index < favElements.length; index++) {
     const element = favElements[index];
-   
-   
-    const boxDiv = $(`<div class="movie-box""></div>`);
+
+    const boxDiv = $(`<div class="movie-box" id="${element.id}"></div>`);
     boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
     boxDiv.append(
       $(`<div class="box-text">
@@ -64,37 +76,38 @@ favTag.on("click",()=>{
   </a>
 </div>`)
     );
-
-    $(`.fav-page .movies-content`).append(boxDiv)
-   }
-   
-})
+    boxDiv.on("click", creatPlayPage);
+    $(`.fav-page .movies-content`).append(boxDiv);
+  }
+});
 userImg.on("click", signPage);
-$(`.sign-up-btn`).on("click",()=>{
-  signFlip.css("transform","rotateY(180deg)")
-})
-$(`.sign-in-btn`).on("click",()=>{
-  signFlip.css("transform","rotateY(0)")
-})
+$(`.sign-up-btn`).on("click", () => {
+  signFlip.css("transform", "rotateY(180deg)");
+});
+$(`.sign-in-btn`).on("click", () => {
+  signFlip.css("transform", "rotateY(0)");
+});
 for (let index = 0; index < tags.length; index++) {
   const element = tags[index];
   element.on("click", () => {
-    populerSection.show()
-    movieSection.show()
-    homeSection.show()
-    nextPage.show()
-    playPage.hide()
-    aboutMovie.hide()
-    logInPage.hide()
-    favPage.hide()
+    populerSection.show();
+    movieSection.show();
+    homeSection.show();
+    nextPage.show();
+    playPage.hide();
+    aboutMovie.hide();
+    logInPage.hide();
+    favPage.hide();
   });
 }
-const addToFav = function(){
-  const indexById = $(this).attr("id")
-  // console.log($(`div #${indexById}`)[0]);
-  favElements.push(movieImges[indexById])
-  // localStorage.setItem("fav",JSON.stringify(favElements))
-}
+const addToFav = function () {
+  const indexById = $(this).attr("id");
+  movieImges[indexById].id = indexById;
+
+  favElements.push(movieImges[indexById]);
+
+  localStorage.setItem("fav", JSON.stringify(favElements));
+};
 
 const movieImges = [
   {
@@ -283,19 +296,18 @@ const movieImges = [
   },
 ];
 
-
-
 const creatPlayPage = function () {
   const indexById = $(this).attr("id");
+  console.log(this);
   const element = movieImges[indexById];
-  favPage.hide()
-  populerSection.hide()
-  movieSection.hide()
-  homeSection.hide()
-  nextPage.hide()
-  playPage.show()
-  aboutMovie.show()
-  logInPage.hide()
+  favPage.hide();
+  populerSection.hide();
+  movieSection.hide();
+  homeSection.hide();
+  nextPage.hide();
+  playPage.show();
+  aboutMovie.show();
+  logInPage.hide();
   playTrailer.empty();
   aboutMovie.empty();
   playTrailer.append($(`<img src="${element.src}" class="play-img"/>`));
@@ -314,7 +326,7 @@ const creatPlayPage = function () {
 </a>
 </div>`)
   );
-  $(`.add-to-fav`).on("click",addToFav)
+  $(`.add-to-fav`).on("click", addToFav);
   aboutMovie.append(
     $(`<h2 class="movie-title-about">${element.title}</h2>
 <p>${element.about}</p>
