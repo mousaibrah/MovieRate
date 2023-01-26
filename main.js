@@ -248,7 +248,7 @@ const creatPlayPage = function () {
     const element_1 = element.cast[index];
     $(`.cast`).append(
       $(`<div class="cast-box"><img src="${element_1.src}" class="cast-img>"
-  <span class="cast-title">${element_1.name}</span></div>`)
+  <span class="cast-title" id="cast-name">${element_1.name}</span></div>`)
     );
   }
 
