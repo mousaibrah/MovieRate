@@ -8,6 +8,10 @@ const playTrailer = $(`.play-trailer`);
 const aboutMovie = $(`.about-movie`);
 const swiperWraper = $(`.swiper-wrapper`);
 const movieContent = $(`.movies-content`);
+const logInPage = $(`.login-page`)
+const userImg = $(`.user-img`)
+const themeBtn = $(`.theme`)
+const root = document.querySelector(":root")
 const tags = [$(`#home-a-tag`), $(`#trend-a-tag`), $(`#movie-a-tag`)];
 const nextPage = $(`.next-page`);
 homeSection.append($(`<img src="./img/john-wick.jpg" class="home-img"/>`));
@@ -21,6 +25,28 @@ homeSection.append(
 </a>
 </div>`)
 );
+
+
+
+const test = ()=>{
+  $(`.populer,.movies,.home,.next-page,.play-container,.about-movie`).css("display", "none");
+$(`.login-page`).css("display","block")
+}
+
+
+userImg.on("click",test)
+
+
+
+
+
+
+
+
+
+
+
+
 for (let index = 0; index < tags.length; index++) {
   const element = tags[index];
   element.on("click", () => {
@@ -216,6 +242,15 @@ const movieImges = [
     ],
   },
 ];
+
+
+themeBtn.on("click",()=>{
+  
+  root.style.setProperty("--body-color","#fcfeff")
+
+})
+
+
 const creatPlayPage = function () {
   const indexById = $(this).attr("id");
   const element = movieImges[indexById];

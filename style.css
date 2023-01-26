@@ -14,7 +14,12 @@
   --body-color: #1e1e2a;
   --container-color: #2d2e37;
   --text-color: #fcfeff;
+  --light-text-color:#050505 ;
 }
+.darktheme{
+
+}
+
 /* Custom Scrollbar  */
 html::-webkit-scrollbar {
   width: 8px;
@@ -110,6 +115,23 @@ section {
   font-size: 15px;
   border: none;
 }
+/* theme mood  */
+.theme{
+  background: var(--container-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  max-width: 100%;
+  height: 40px;
+  margin-right: 14px;
+  border: none;
+  padding: 16px 11px;
+  border-radius: 50%;
+  color: var(--text-color);
+ 
+  
+}
 /* user */
 .user {
   display: flex;
@@ -118,6 +140,8 @@ section {
 .user-img {
   width: 40px;
   height: 40px;
+  background: #a19f9f;
+  margin-left: -12px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
@@ -303,7 +327,7 @@ section {
 .play-container {
   position: relative;
   min-height: 540px;
-  margin-top: 100px !important;
+  margin-top: 70px !important;
   display: none;
 }
 .play-img {
@@ -355,7 +379,7 @@ section {
 /* About */
 .about-movie {
   display: none;
-  margin-top: 30px !important;
+  margin-top: 70px !important;
 }
 .movie-title-about {
   color: var(--main-color);
@@ -383,6 +407,106 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
   gap: 15px;
 }
+
+
+
+section.login-page{
+  position: relative;
+  /* min-height: 470px; */
+  display: grid;
+  /* grid-template-columns: 1fr; */
+justify-content: center !important;
+  align-items: center;
+  padding-left: 80px;
+  margin-top: 80px !important;
+  border-radius: 8px;
+ 
+}
+ .log{
+
+  display: flex !important;
+  width: 450px;
+  height: 500px;
+  position: relative;
+  flex-direction: column;
+  align-items: center ;
+  
+  background: var(--container-color);
+  transform: translate(492px,40px);
+ 
+ }
+ .log label{
+ padding-top: 20px;
+ }
+.log h3{
+  padding-top: 40px;
+}
+.log span{
+  color: var(--hover-color);
+}
+.email-input,.pass-input,.name-input{
+  background: transparent;
+  margin-top: 4px;
+  padding: 10px 10px;
+  border: 0.6px solid var(--hover-color);
+  color: #ffb33aba;
+  
+}
+.email-input:hover {
+  transform: scale(1.1);
+  transition: .3s;
+  border: .6px solid var(--text-color);
+}
+
+.log-in-icons .bx{
+  font-size: 24px;
+  background: var(--main-color);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 40px;
+}
+.log-in-icons .bxl-facebook{
+  background: #4e5cf9;
+}
+.log-in-icons .bxl-google{
+  background: linear-gradient(to top, #e94d1e, #07aa10);
+  
+}
+.log-in-icons .bxl-instagram{
+  background: linear-gradient(to top, #eb1877, #ac10e5);
+}
+.log-in-icons p{
+  text-align: center;
+  margin-top: 8px;
+}
+.log button{
+  background: var(--main-color);
+  color: var(--body-color);
+  padding: 10px 10px;
+  font-weight: 500;
+  margin-top: 24px;
+}
+.log button:hover{
+  background-color: var(--hover-color);
+  transition: 0.3s all linear;
+}
+.sign-up-btn{
+  position: absolute;
+
+  bottom: 8px;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* media responsive */
 
