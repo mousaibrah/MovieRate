@@ -26,7 +26,8 @@ homeSection.append(
 </a>
 </div>`)
 );
-// const favElements = JSON.parse(localStorage.getItem("fav"))
+let favElements = []
+let test = JSON.parse(localStorage.getItem("fav"))
 const signPage = () => {
   populerSection.hide()
   movieSection.hide()
@@ -35,7 +36,7 @@ const signPage = () => {
   playPage.hide()
   aboutMovie.hide()
   favPage.hide()
-  logInPage.show()
+  logInPage.css("display","grid")
 };
 favTag.on("click",()=>{
   populerSection.hide()
@@ -46,10 +47,27 @@ favTag.on("click",()=>{
   aboutMovie.hide()
   favPage.show()
   logInPage.hide()
-  favPage.append($(`<div class="heading">
-  <h2 class="heading-title">Favourlite</h2>
-   </div>`))
-   favPage.append($(`<div class="movies-content" id="fav-movie"></div>`))
+  $(`.fav-page .movies-content`).empty()
+   for (let index = 0; index < favElements.length; index++) {
+    const element = favElements[index];
+   
+   
+    const boxDiv = $(`<div class="movie-box""></div>`);
+    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
+    boxDiv.append(
+      $(`<div class="box-text">
+  <h2 class="movie-title">${element.title}</h2>
+  <span class="movie-type">${element.type}</span>
+  <a href="${element.trailer}" class="watch-btn play-btn">
+    <i class="bx bx-right-arrow"></i>
+    <span class="trailer-span">Watch the trailer</span>
+  </a>
+</div>`)
+    );
+
+    $(`.fav-page .movies-content`).append(boxDiv)
+   }
+   
 })
 userImg.on("click", signPage);
 $(`.sign-up-btn`).on("click",()=>{
@@ -73,8 +91,9 @@ for (let index = 0; index < tags.length; index++) {
 }
 const addToFav = function(){
   const indexById = $(this).attr("id")
-  favElements.push($(`#${indexById}`))
-  localStorage.setItem("fav",JSON.stringify(favElements))
+  // console.log($(`div #${indexById}`)[0]);
+  favElements.push(movieImges[indexById])
+  // localStorage.setItem("fav",JSON.stringify(favElements))
 }
 
 const movieImges = [
@@ -357,7 +376,7 @@ const creatMovieSection = function () {
 </div>`)
     );
     boxDiv.on("click", creatPlayPage);
-    movieContent.append(boxDiv);
+    $(`.movies .movies-content`).append(boxDiv);
   }
 };
 creatMovieSection();
