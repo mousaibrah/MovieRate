@@ -12,9 +12,51 @@ const logInPage = $(`.login-page`);
 const userImg = $(`.user-img`);
 const favPage = $(`.fav-page`);
 const signFlip = $(`.flip-login`);
+const submitBtn = $(`.submit-login`);
 const tags = [$(`#home-a-tag`), $(`#trend-a-tag`), $(`#movie-a-tag`)];
 const favTag = $(`#fav-a-tag`);
 const nextPage = $(`.next-page`);
+const newUserName = $(`#sign-name`);
+const newUserEmail = $(`#sign-email`);
+const newUserPass = $(`#sign-pass`);
+const userEmail = $("#log-email");
+const userPass = $(`#log-pass`);
+let userInfo = [];
+let favElements = [];
+localStorage["user"]
+  ? (userInfo = JSON.parse(localStorage.getItem("user")))
+  : userInfo;
+
+const signFunc = function () {
+  const logObj = {
+    userName: newUserName.val(),
+    email: newUserEmail.val(),
+    password: newUserPass.val(),
+  };
+  if (logObj.userName) {
+    userInfo.push(logObj);
+    localStorage.setItem("user", JSON.stringify(userInfo));
+    homePage();
+  } else {
+    for (let index = 0; index < userInfo.length; index++) {
+      const element = userInfo[index];
+      if (
+        element.email !== userEmail.val() &&
+        element.password !== userPass.val()
+      ) {
+        console.log("hello world");
+        $(`.pass-input,.email-input`).css({"border-color": "#ff0000ba", 
+        "border-width":"0.6px", 
+        "border-style":"solid"});
+      } else {
+        homePage();
+      }
+    }
+  }
+};
+
+submitBtn.on("click", signFunc);
+
 homeSection.append($(`<img src="./img/john-wick.jpg" class="home-img"/>`));
 homeSection.append(
   $(` <div class="home-text">
@@ -30,7 +72,7 @@ $(`.ok-btn`).on("click", () => {
   $(`.intro`).css("display", "none");
   signFlip.css("display", "block");
 });
-let favElements = [];
+
 localStorage["fav"]
   ? (favElements = JSON.parse(localStorage.getItem("fav")))
   : favElements;
@@ -46,10 +88,11 @@ const signPage = () => {
   signFlip.hide();
   logInPage.css("display", "grid");
   $(`.intro`).css("display", "flex");
-};
-const test = function () {
-  console.log($(this).attr("id"));
-};
+
+$(`.pass-input,.email-input`).css({"border-color": "#f8a92a", 
+"border-width":"0.6px", 
+"border-style":"solid"})};
+
 favTag.on("click", function () {
   populerSection.hide();
   movieSection.hide();
@@ -87,18 +130,19 @@ $(`.sign-up-btn`).on("click", () => {
 $(`.sign-in-btn`).on("click", () => {
   signFlip.css("transform", "rotateY(0)");
 });
+const homePage = () => {
+  populerSection.show();
+  movieSection.show();
+  homeSection.show();
+  nextPage.show();
+  playPage.hide();
+  aboutMovie.hide();
+  logInPage.hide();
+  favPage.hide();
+};
 for (let index = 0; index < tags.length; index++) {
   const element = tags[index];
-  element.on("click", () => {
-    populerSection.show();
-    movieSection.show();
-    homeSection.show();
-    nextPage.show();
-    playPage.hide();
-    aboutMovie.hide();
-    logInPage.hide();
-    favPage.hide();
-  });
+  element.on("click", homePage);
 }
 const addToFav = function () {
   const indexById = $(this).attr("id");

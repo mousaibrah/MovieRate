@@ -452,6 +452,7 @@ section.login-page {
   padding: 10px 10px;
   border: 0.6px solid var(--hover-color);
   color: #ffb33aba;
+ 
 }
 .email-input:hover,
 .name-input:hover,
