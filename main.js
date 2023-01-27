@@ -26,16 +26,17 @@ const userEmail = $("#log-email");
 const userPass = $(`#log-pass`);
 const moviePage = $(`.movie-page`)
 const exploreTag = $(`#explore-a-tag`)
+
 // Local Storage
 let userInfo = [];
 let favElements = [];
 // Data Variable
-const movieImges = [
+// fetch(themoviedb.orgmovieapi_key=fccd45168523a14a8e5316ad86dca398)
+const movieData = [
   {
     src: "./img/popular-movie-1.jpg",
     title: "Wrath Of Man",
     type: "action",
-    actors: ["jason statham", "mousa", "khalid", "mohammad", "ibrahim"],
     rate: 5,
     trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
     about:
@@ -200,7 +201,7 @@ const movieImges = [
     rate: 5,
     trailer: "./img/WRATH-OF-MAN-TRAILER MGM Studios.mp4",
     about:
-      "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
+    "A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week.",
     cast: [
       { name: "Jason Statham", src: "./img/jason.jpeg" },
       { name: "Scott Eastwood", src: "./img/Scott.jpg" },
@@ -216,6 +217,23 @@ const movieImges = [
     ],
   },
 ];
+// Creat movie Box
+const CreatMovieBox = (element,index)=>{
+  const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
+  boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
+  boxDiv.append(
+    $(`<div class="box-text">
+<h2 class="movie-title">${element.title}</h2>
+<span class="movie-type">${element.type}</span>
+<a href="${element.trailer}" class="watch-btn play-btn">
+  <i class="bx bx-right-arrow"></i>
+  <span class="trailer-span">Watch the trailer</span>
+</a>
+</div>`)
+  );
+  boxDiv.on("click", creatPlayPage);
+   return boxDiv[0]
+}
 
 // Creat Home Page
 const creatHomePage = () => {
@@ -224,7 +242,7 @@ const creatHomePage = () => {
     $(` <div class="home-text">
 <h1 class="home-title">john wick <br />chapter 4</h1>
 <p>Relesing 24 March</p>
-<a href="./img/john-wick-trailer.mp4" class="watch-btn">
+<a href="https://www.youtube.com/embed/NmzuHjWmXOc" target="_blank" class="watch-btn">
   <i class="bx bx-right-arrow"></i>
   <span>Watch the trailer</span>
 </a>
@@ -232,23 +250,12 @@ const creatHomePage = () => {
   );
 };
 // Creat Populer Section
-const creatPopulerSection = function () {
+const creatPopulerSection = function (movies , popular) {
   for (let index = 0; index < 8; index++) {
-    const element = movieImges[index];
+    const element = movieData[index];
     const slideDiv = $(`<div class="swiper-slide"></div>`);
-    const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
-    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
-    boxDiv.append(
-      $(`<div class="box-text">
-  <h2 class="movie-title">${element.title}</h2>
-  <span class="movie-type">${element.type}</span>
-  <a href="${element.trailer}" class="watch-btn play-btn">
-    <i class="bx bx-right-arrow"></i>
-    <span class="trailer-span">Watch the trailer</span>
-  </a>
-</div>`)
-    );
-    boxDiv.on("click", creatPlayPage);
+    const boxDiv = CreatMovieBox(element,index)
+    
     slideDiv.append(boxDiv);
     swiperWraper.append(slideDiv);
   }
@@ -256,27 +263,16 @@ const creatPopulerSection = function () {
 // Creat Movie Section
 const creatMovieSection = function () {
   for (let index = 0; index < 8; index++) {
-    const element = movieImges[index];
-    const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
-    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
-    boxDiv.append(
-      $(`<div class="box-text">
-  <h2 class="movie-title">${element.title}</h2>
-  <span class="movie-type">${element.type}</span>
-  <a href="${element.trailer}" class="watch-btn play-btn">
-    <i class="bx bx-right-arrow"></i>
-    <span class="trailer-span">Watch the trailer</span>
-  </a>
-</div>`)
-    );
-    boxDiv.on("click", creatPlayPage);
+    const element = movieData[index];
+    const boxDiv = CreatMovieBox(element,index)
+   
     $(`.movies .movies-content`).append(boxDiv);
   }
 };
 // Creat Play Page
 const creatPlayPage = function () {
   const indexById = $(this).attr("id");
-  const element = movieImges[indexById];
+  const element = movieData[indexById];
   favPage.hide();
   populerSection.hide();
   movieSection.hide();
@@ -354,7 +350,7 @@ const creatFavPage = () => {
   </a>
 </div>`)
     );
-    boxDiv.on("click", creatPlayPage);
+    
     $(`.fav-page .movies-content`).append(boxDiv);
   }
 };
@@ -371,7 +367,7 @@ const creatSignPage = () => {
   signFlip.hide();
   logInPage.css("display", "grid");
   $(`.intro`).css("display", "flex");
-  $(`.pass-input,.email-input`).css({ border: "0.6px solid #f8a92a" });
+  $(`.pass-input,.email-input`).css({ "border": "0.6px solid #f8a92a" });
 };
 
 // Return Home Btn
@@ -408,7 +404,7 @@ const checkForUserLogin = () => {
         element.email !== userEmail.val() &&
         element.password !== userPass.val()
       ) {
-        $(`.pass-input,.email-input`).css({ border: "0.6px solid #ff0000ba" });
+        $(`.pass-input,.email-input`).css({ "border": "0.6px solid #ff0000ba" });
       } else {
         homePage();
       }
@@ -429,8 +425,8 @@ localStorage["fav"]
 // Add To Fav Btn
 const addToFav = function () {
   const indexById = $(this).attr("id");
-  movieImges[indexById].id = indexById;
-  favElements.push(movieImges[indexById]);
+  movieData[indexById].id = indexById;
+  favElements.push(movieData[indexById]);
   localStorage.setItem("fav", JSON.stringify(favElements));
 };
 
@@ -446,26 +442,15 @@ const creatMoviePage = ()=>{
   logInPage.hide();
   favPage.hide();
   moviePage.show()
-  for (let index = 0; index < movieImges.length; index++) {
-    const element = movieImges[index];
-    const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
-    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
-    boxDiv.append(
-      $(`<div class="box-text">
-  <h2 class="movie-title">${element.title}</h2>
-  <span class="movie-type">${element.type}</span>
-  <a href="${element.trailer}" class="watch-btn play-btn">
-    <i class="bx bx-right-arrow"></i>
-    <span class="trailer-span">Watch the trailer</span>
-  </a>
-</div>`)
-    );
-    boxDiv.on("click", creatPlayPage);
+  for (let index = 0; index < movieData.length; index++) {
+    const element = movieData[index];
+    const boxDiv = CreatMovieBox(element,index)
     $(`.movie-page .movies-content`).append(boxDiv);
   }
 }
 
 // Click Event
+
 $(`.sign-up-btn`).on("click", () => {
   signFlip.css("transform", "rotateY(180deg)");
 });
@@ -525,3 +510,5 @@ const swiper = new Swiper(".populer-content", {
     },
   },
 });
+
+

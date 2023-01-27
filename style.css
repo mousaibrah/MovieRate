@@ -25,6 +25,9 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
   background: var(--main-color);
 }
+html {
+  scroll-behavior: smooth;
+}
 /* a links */
 a {
   text-decoration: none;
@@ -414,8 +417,8 @@ section.login-page {
 }
 
 .flip-login {
-  display: none;
-  width: 350px;
+  display: block;
+  width: 750px;
   height: 650px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -714,6 +717,9 @@ section.login-page {
   .cast img {
     max-width: 100px;
     max-height: 100px;
+  }
+  .flip-login{
+    width: 350px
   }
 }
 @media (max-width: 408px) {
