@@ -1,0 +1,9 @@
+title:The Unbearable Weight of Massive Talent
+cast1:Nicolas Cage
+cast2:Pedro Pascal
+cast3:Tiffany Haddish
+cast4:Sharon Horgan
+cast5:Neil Patrick Harris
+type:action/comedy/crime
+rate:7
+description:In this action-packed comedy, Nicolas Cage plays Nick Cage, channeling his iconic characters as he's caught between a superfan (Pedro Pascal) and a CIA agent (Tiffany Haddish).

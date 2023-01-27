@@ -1,0 +1,9 @@
+title:Black Adam
+cast1:Dwayne Johnson
+cast2:Aldis Hodge
+cast3:Pierce Brosnan
+cast4:Noah Centineo
+cast5:Sarah Shahi
+type:Action/Adventure
+rate:7
+description:Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods--and imprisoned just as quickly--Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.

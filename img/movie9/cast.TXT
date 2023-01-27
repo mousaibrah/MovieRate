@@ -1,0 +1,9 @@
+title:The Pale Blue Eye
+cast1:Christian Bale
+cast2:Harry Melling
+cast3:Simon McBurney
+cast4:Timothy Spall
+cast5:Toby Jones
+type:crime/horror/mystery
+rate:7
+description:A world-weary detective is hired to investigate the murder of a West Point cadet. Stymied by the cadets' code of silence, he enlists one of their own to help unravel the case - a young man the world would come to know as Edgar Allan Poe.

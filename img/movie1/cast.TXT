@@ -1,0 +1,9 @@
+title : wrath of man,
+cast1 :Jason Statham,
+cast2:Jeffrey Donovan,
+cast3:Josh Hartnett,
+cast4:Niamh Algar,
+cast5:Scott Eastwood,
+type:action,
+rate:8,
+description:A cold and mysterious character working at a cash truck company responsible for moving a lot of money around Los Angeles each week. Mysterious and wild-eyed, a new security guard for a cash truck surprises his co-workers when he unleashes precision skills during a heist.

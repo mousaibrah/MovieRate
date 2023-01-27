@@ -1,0 +1,9 @@
+title:Jung_E
+cast1:Uhm Ji-won
+cast2:Kim Hyun-joo
+cast3:So-yi Park
+cast4:Ryu Kyung-Soo
+cast5:Aria Song
+rate:6
+type:action/adventure/drama
+description:On an uninhabitable 22nd-century Earth, the outcome of a civil war hinges on cloning the brain of an elite soldier to create a robot mercenary.

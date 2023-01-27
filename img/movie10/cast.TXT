@@ -1,0 +1,9 @@
+title:Babylon
+cast1:Brad Pitt
+cast2:Margot Robbie
+cast3:Jean Smart
+cast4:Olivia Wilde
+cast5:J.C. Currais
+type:comedy/drama/history
+rate:8
+description:A tale of outsized ambition and outrageous excess, it traces the rise and fall of multiple characters during an era of unbridled decadence and depravity in early Hollywood.

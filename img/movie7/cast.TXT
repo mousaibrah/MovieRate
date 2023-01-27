@@ -1,0 +1,9 @@
+title:The Menu
+cast1:Ralph Fiennes
+cast2:Anya Taylor-Joy
+cast3:Nicholas Hoult
+cast4:Hong Chau
+cast5:Janet McTeer
+rate:7
+type:comedy/horror/thriller
+description:A young couple travels to a remote island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some shocking surprises.

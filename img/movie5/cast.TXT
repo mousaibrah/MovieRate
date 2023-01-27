@@ -1,0 +1,9 @@
+title:Section Eight
+cast1:Dermot Mulroney
+cast2:Mickey Rourke
+cast3:Dolph Lundgren
+cast4:Scott Adkins
+cast5:Ryan Kwanten
+type:Action/thriller
+rate:4
+description:After avenging the murder of his family, a former soldier is sprung from prison and recruited by a shadowy government agency.
