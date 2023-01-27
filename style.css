@@ -541,7 +541,7 @@ section.login-page {
 .add-to-fav {
   margin-top: 15px;
 }
-.fav-page {
+.fav-page ,.movie-page {
   display: none;
   padding-top: 120px;
 }

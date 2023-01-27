@@ -24,6 +24,8 @@ const newUserEmail = $(`#sign-email`);
 const newUserPass = $(`#sign-pass`);
 const userEmail = $("#log-email");
 const userPass = $(`#log-pass`);
+const moviePage = $(`.movie-page`)
+const exploreTag = $(`#explore-a-tag`)
 // Local Storage
 let userInfo = [];
 let favElements = [];
@@ -253,7 +255,7 @@ const creatPopulerSection = function () {
 };
 // Creat Movie Section
 const creatMovieSection = function () {
-  for (let index = 0; index < movieImges.length; index++) {
+  for (let index = 0; index < 8; index++) {
     const element = movieImges[index];
     const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
     boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
@@ -274,7 +276,6 @@ const creatMovieSection = function () {
 // Creat Play Page
 const creatPlayPage = function () {
   const indexById = $(this).attr("id");
-  console.log(this);
   const element = movieImges[indexById];
   favPage.hide();
   populerSection.hide();
@@ -282,6 +283,7 @@ const creatPlayPage = function () {
   homeSection.hide();
   nextPage.hide();
   playPage.show();
+  moviePage.hide()
   aboutMovie.show();
   logInPage.hide();
   playTrailer.empty();
@@ -331,6 +333,7 @@ const creatFavPage = () => {
   homeSection.hide();
   nextPage.hide();
   playPage.hide();
+  moviePage.hide()
   aboutMovie.hide();
   favPage.show();
   logInPage.hide();
@@ -364,10 +367,11 @@ const creatSignPage = () => {
   playPage.hide();
   aboutMovie.hide();
   favPage.hide();
+  moviePage.hide()
   signFlip.hide();
   logInPage.css("display", "grid");
   $(`.intro`).css("display", "flex");
-  $(`.pass-input,.email-input`).css({ "border": "0.6px solid #f8a92a" });
+  $(`.pass-input,.email-input`).css({ border: "0.6px solid #f8a92a" });
 };
 
 // Return Home Btn
@@ -380,6 +384,7 @@ const returnHomeBtn = () => {
   aboutMovie.hide();
   logInPage.hide();
   favPage.hide();
+  moviePage.hide()
 };
 // Local Storage
 localStorage["user"]
@@ -403,7 +408,7 @@ const checkForUserLogin = () => {
         element.email !== userEmail.val() &&
         element.password !== userPass.val()
       ) {
-        $(`.pass-input,.email-input`).css({ "border": "0.6px solid #ff0000ba" });
+        $(`.pass-input,.email-input`).css({ border: "0.6px solid #ff0000ba" });
       } else {
         homePage();
       }
@@ -429,6 +434,37 @@ const addToFav = function () {
   localStorage.setItem("fav", JSON.stringify(favElements));
 };
 
+// Creat Movie Page (next page)
+const creatMoviePage = ()=>{
+  $(`.movie-page .movies-content`).empty()
+  populerSection.hide();
+  movieSection.hide();
+  homeSection.hide();
+  nextPage.hide();
+  playPage.hide();
+  aboutMovie.hide();
+  logInPage.hide();
+  favPage.hide();
+  moviePage.show()
+  for (let index = 0; index < movieImges.length; index++) {
+    const element = movieImges[index];
+    const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
+    boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
+    boxDiv.append(
+      $(`<div class="box-text">
+  <h2 class="movie-title">${element.title}</h2>
+  <span class="movie-type">${element.type}</span>
+  <a href="${element.trailer}" class="watch-btn play-btn">
+    <i class="bx bx-right-arrow"></i>
+    <span class="trailer-span">Watch the trailer</span>
+  </a>
+</div>`)
+    );
+    boxDiv.on("click", creatPlayPage);
+    $(`.movie-page .movies-content`).append(boxDiv);
+  }
+}
+
 // Click Event
 $(`.sign-up-btn`).on("click", () => {
   signFlip.css("transform", "rotateY(180deg)");
@@ -441,6 +477,8 @@ for (let index = 0; index < tags.length; index++) {
   const element = tags[index];
   element.on("click", returnHomeBtn);
 }
+exploreTag.on("click",creatMoviePage)
+nextPage.on("click",creatMoviePage)
 submitBtn.on("click", checkForUserLogin);
 $(`.ok-btn`).on("click", welomeMessage);
 favTag.on("click", creatFavPage);
