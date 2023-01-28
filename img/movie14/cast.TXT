@@ -1,0 +1,9 @@
+title:Django Unchained 
+cast1:Jamie Foxx
+cast2:Christoph Waltz
+cast3:Leonardo DiCaprio
+cast4:Samuel L. Jackson
+cast5:Kerry Washington
+type:drama
+rate:9
+description:With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi.

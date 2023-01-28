@@ -1,0 +1,9 @@
+title:The Shawshank Redemption
+cast1:Tim Robbins
+cast2:Morgan Freeman
+cast3:Bob Gunton
+cast4:William Sadler
+cast5:Clancy Brown
+type:drama
+rate:10
+description:Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.

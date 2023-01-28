@@ -28,7 +28,7 @@ const moviePage = $(`.movie-page`);
 const exploreTag = $(`#explore-a-tag`);
 const searchInput = $(`.search-input`)
 // Local Storage
-let userInfo = [];
+;
 let favElements = [];
 // Data Variable
 // fetch(themoviedb.orgmovieapi_key=fccd45168523a14a8e5316ad86dca398)
@@ -172,6 +172,66 @@ const movieData = [
       { name: "Jean Smart"},
       { name: "Olivia Wilde",},
       {name: "J.C. Currais",},],
+  },
+  {
+    title: "Enola Holmes 2",
+    type: "crime/action",
+    rate: 7,
+    about:"Now a detective-for-hire, Enola Holmes takes on her first official case to find a missing girl as the sparks of a dangerous conspiracy ignite a mystery that requires the help of friends - and Sherlock himself - to unravel.",
+    cast: [
+      { name: "Millie Bobby Brown" },
+      { name: "Henry Cavill" },
+      { name: "David Thewlis"},
+      { name: "Louis Partridge",},
+      {name: "Susan Wokoma",},],
+  },
+  {
+    title: "The Takedown",
+    type: "action/comedy",
+    rate: 6,
+    about:"Diakité and Monge as police officers who are the complete opposite, and get paired together to uncover an unexpectedly big criminal case.",
+    cast: [
+      { name: "Omar Sy" },
+      { name: "Laurent Lafitte" },
+      { name: "Izïa Higelin"},
+      { name: "Jo Prestia",},
+      {name: "Flavie Péan",},],
+  },
+  {
+    title: "The Shawshank Redemption",
+    type: "drama",
+    rate: 10,
+    about:"Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
+    cast: [
+      { name: "Tim Robbins" },
+      { name: "Morgan Freeman" },
+      { name: "Bob Gunton"},
+      { name: "William Sadler",},
+      {name: "Clancy Brown",},],
+  },
+  {
+    title: "Django Unchained",
+    type: "drama",
+    rate: 9,
+    about:"With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation-owner in Mississippi.",
+    cast: [
+      { name: "Jamie Foxx" },
+      { name: "Christoph Waltz" },
+      { name: "Leonardo DiCaprio"},
+      { name: "Samuel L. Jackson",},
+      {name: "Kerry Washington",},],
+  },
+  {
+    title: "The Wolf of Wall Street",
+    type: "comedy/crime",
+    rate: 9,
+    about:"Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+    cast: [
+      { name: "Leonardo DiCaprio" },
+      { name: "Jonah Hill" },
+      { name: "Margot Robbie"},
+      { name: "Matthew McConaughey",},
+      {name: "Kyle Chandler",},],
   },
 ];
 const addInfo = ()=>{
@@ -368,50 +428,55 @@ const returnHomeBtn = () => {
 };
 
 // Local Storage
+let userInfo = []
 localStorage["user"]
   ? (userInfo = JSON.parse(localStorage.getItem("user")))
   : userInfo;
+
+  const userInfoObj = {
+    username: newUserName.val(),
+    email:newUserEmail.val(),
+    password:newUserPass.val()
+  }
 // Check For User Login
 const checkForUserLogin = () => {
-  console.log(userInfo);
-  const logObj = {
-    userName: newUserName.val(),
-    email: newUserEmail.val(),
-    password: newUserPass.val(),
-  };
+  userInfoObj.username = newUserName.val()
+  userInfoObj.email= newUserEmail.val()
+  userInfoObj.password=newUserPass.val()
+   if (userInfo.length === 0) {
+    userInfo.push(userInfoObj)
+    localStorage.setItem("user",JSON.stringify(userInfo))
+    returnHomeBtn()
+   }else{
+       for (let index = 0; index < userInfo.length; index++) {
+        const element = userInfo[index];
+        if(newUserName.val()){
+        if (element.username === newUserName.val()) {
+          $(`.name-input`).css({ "border": "0.6px solid #ff0000ba" })
+        }
+
+        if(element.username !== newUserName.val() && element.email !== newUserEmail.val() &&element.password !==newUserPass.val() ){
+        userInfo.push(userInfoObj)
+        localStorage.setItem("user",JSON.stringify(userInfo))
+        returnHomeBtn()
+      }}else if (element.email !== userEmail.val() || element.password !==userPass.val()) {
+        $(`.email-input`).css({ "border": "0.6px solid #ff0000ba" }); 
+         $(`.pass-input`).css({ "border": "0.6px solid #ff0000ba" });
+      }else {
+       
+        $(`.intro`).css("display", "flex")
+         $(`.intro`).text("Logged in Successfully")
+        signFlip.css("display", "none")
+        setTimeout(() => {
+          returnHomeBtn()
+        }, 2000);
+      }
+       }
+}
+
+}
 
   
-    for (let index = 0; index < userInfo.length; index++) {
-      const element = userInfo[index];
-      if (logObj.userName) {
-        if (element.userName ===newUserName.val()) {
-          $(`.name-input`).css({ border: "0.6px solid #ff0000ba" });
-          return;
-        }else{
-        userInfo.push(logObj);
-        localStorage.setItem("user", JSON.stringify(userInfo));
-        returnHomeBtn();}
-      }
-     
-     
-      if (element.email !== userEmail.val()) {
-        $(`.email-input`).css({ border: "0.6px solid #ff0000ba" });
-      }
-      if (element.password !== userPass.val()) {
-        $(`.pass-input`).css({ border: "0.6px solid #ff0000ba" });
-      } else {
-        $(`.intro-message`).text("LOGGED In SUCCESSFULLY");
-        creatSignPage();
-        $(`.ok-btn`).off("click", welomeMessage);
-        $(`.ok-btn`).on(
-          "click",
-          setTimeout(() => {
-            returnHomeBtn();
-          }, 2000)
-        );
-      }
-    }
-  }
 ;
 // Welcome Message
 const welomeMessage = () => {
@@ -452,6 +517,7 @@ const creatMoviePage = () => {
 };
 
 // Click Event
+
 searchInput.on("input",searchFilter)
 $(`.sign-up-btn`).on("click", () => {
   signFlip.css("transform", "rotateY(180deg)");

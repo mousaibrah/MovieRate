@@ -1,0 +1,9 @@
+title:The Takedown
+cast1:Omar Sy
+cast2:Laurent Lafitte
+cast3:Izïa Higelin
+cast4:Jo Prestia
+cast5:Flavie Péan
+type:action/comedy
+rate:6
+description: Diakité and Monge as police officers who are the complete opposite, and get paired together to uncover an unexpectedly big criminal case.

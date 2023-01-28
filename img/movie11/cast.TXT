@@ -1,0 +1,9 @@
+title:Enola Holmes 2
+cast1:Millie Bobby Brown
+cast2:Henry Cavill
+cast3:David Thewlis
+cast4:Louis Partridge
+cast5:Susan Wokoma
+type:crime/action
+rate:7
+description:Now a detective-for-hire, Enola Holmes takes on her first official case to find a missing girl as the sparks of a dangerous conspiracy ignite a mystery that requires the help of friends - and Sherlock himself - to unravel.
