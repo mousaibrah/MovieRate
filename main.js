@@ -26,7 +26,7 @@ const userEmail = $("#log-email");
 const userPass = $(`#log-pass`);
 const moviePage = $(`.movie-page`);
 const exploreTag = $(`#explore-a-tag`);
-
+const searchInput = $(`.search-input`)
 // Local Storage
 let userInfo = [];
 let favElements = [];
@@ -185,6 +185,20 @@ const addInfo = ()=>{
   }
 }
 addInfo()
+//  Search Filter
+const searchFilter = ()=>{
+  creatMoviePage()
+  $(`.movie-page .movies-content`).empty()
+  for (let index = 0; index < movieData.length; index++) {
+    const element = movieData[index];
+    if (element.title.toLowerCase().includes(searchInput.val().toLowerCase())) {
+      const boxDiv = CreatMovieBox(element, index)
+      $(`.movie-page .movies-content`).append(boxDiv)
+    }
+     
+  }
+
+}
 // Creat movie Box
 const CreatMovieBox = (element, index) => {
   const boxDiv = $(`<div class="movie-box" id="${index}"></div>`);
@@ -193,7 +207,7 @@ const CreatMovieBox = (element, index) => {
     $(`<div class="box-text">
 <h2 class="movie-title">${element.title}</h2>
 <span class="movie-type">${element.type}</span>
-<a href="${element.trailer}" class="watch-btn play-btn">
+<a href="${element.trailer}" target="_blank" class="watch-btn play-btn">
   <i class="bx bx-right-arrow"></i>
   <span class="trailer-span">Watch the trailer</span>
 </a>
@@ -258,7 +272,7 @@ const creatPlayPage = function () {
   <h2 class="movie-title">${element.title}</h2>
   <span class="movie-type id"movie-type-play"">${element.type}</span>
  <div class="rating"></div>
-  <a href="${element.trailer}" class="watch-btn play-btn">
+  <a href="${element.trailer}" target="_blank" class="watch-btn play-btn">
     <i  class="bx bx-right-arrow"></i>
     <span class="trailer-span">Watch the trailer</span>
   </a>
@@ -288,6 +302,9 @@ const creatPlayPage = function () {
   for (let index = 0; index < element.rate; index++) {
     $(`.rating`).append($(`<i class='bx bxs-star' ></i>`));
   }
+  for (let index = 0; index < (10-element.rate); index++) {
+    $(`.rating`).append($(`<i class='bx bx-star'></i>`))
+  }
 };
 // Creat Favourite Page
 
@@ -311,7 +328,7 @@ const creatFavPage = () => {
       $(`<div class="box-text">
   <h2 class="movie-title">${element.title}</h2>
   <span class="movie-type">${element.type}</span>
-  <a href="${element.trailer}" class="watch-btn play-btn">
+  <a href="${element.trailer}" target="_blank" class="watch-btn play-btn">
     <i class="bx bx-right-arrow"></i>
     <span class="trailer-span">Watch the trailer</span>
   </a>
@@ -356,23 +373,27 @@ localStorage["user"]
   : userInfo;
 // Check For User Login
 const checkForUserLogin = () => {
+  console.log(userInfo);
   const logObj = {
     userName: newUserName.val(),
     email: newUserEmail.val(),
     password: newUserPass.val(),
   };
 
-  if (logObj.userName) {
-    if (logObj.userName === newUserName.val()) {
-      $(`.name-input`).css({ border: "0.6px solid #ff0000ba" });
-      return;
-    }
-    userInfo.push(logObj);
-    localStorage.setItem("user", JSON.stringify(userInfo));
-    returnHomeBtn();
-  } else {
+  
     for (let index = 0; index < userInfo.length; index++) {
       const element = userInfo[index];
+      if (logObj.userName) {
+        if (element.userName ===newUserName.val()) {
+          $(`.name-input`).css({ border: "0.6px solid #ff0000ba" });
+          return;
+        }else{
+        userInfo.push(logObj);
+        localStorage.setItem("user", JSON.stringify(userInfo));
+        returnHomeBtn();}
+      }
+     
+     
       if (element.email !== userEmail.val()) {
         $(`.email-input`).css({ border: "0.6px solid #ff0000ba" });
       }
@@ -391,7 +412,7 @@ const checkForUserLogin = () => {
       }
     }
   }
-};
+;
 // Welcome Message
 const welomeMessage = () => {
   $(`.intro`).css("display", "none");
@@ -431,7 +452,7 @@ const creatMoviePage = () => {
 };
 
 // Click Event
-
+searchInput.on("input",searchFilter)
 $(`.sign-up-btn`).on("click", () => {
   signFlip.css("transform", "rotateY(180deg)");
 });
