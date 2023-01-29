@@ -1,0 +1,9 @@
+title :  Thor: Love and Thunder
+cast1 :Chris Hemsworth
+cast2:Natalie Portman
+cast3:Christian Bale
+cast4:Tessa Thompson
+cast5:Jaimie Alexander
+type:action/comedy
+rate:7
+description:Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.

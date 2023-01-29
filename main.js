@@ -244,6 +244,186 @@ const movieData = [
       { name: "Matthew McConaughey",},
       {name: "Kyle Chandler",},],
   },
+  {
+    title: "Top Gun: Maverick",
+    type: "action/drama",
+    rate: 9,
+    about:"After thirty years, Maverick is still pushing the envelope as a top naval aviator, but must confront ghosts of his past when he leads TOP GUN's elite graduates on a mission that demands the ultimate sacrifice from those chosen to fly it.",
+    cast: [
+      { name: "Tom Cruise" },
+      { name: "Jennifer Connelly" },
+      { name: "Miles Teller"},
+      { name: "Val Kilmer",},
+      {name: "Bashir Salahuddin",},],
+  },
+  {
+    title: "The Batman",
+    type: "action/crime",
+    rate: 8,
+    about:"When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.",
+    cast: [
+      { name: "Paul Dano" },
+      { name: "Robert Pattinson" },
+      { name: "Zoë Kravitz"},
+      { name: "Jeffrey Wright",},
+      {name: "Colin Farrell",},],
+  },
+  {
+    title: "Thor: Love and Thunder",
+    type: "action/comedy",
+    rate: 7,
+    about:"Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.",
+    cast: [
+      { name: "Chris Hemsworth" },
+      { name: "Natalie Portman" },
+      { name: "Christian Bale"},
+      { name: "Tessa Thompson",},
+      {name: "Jaimie Alexander",},],
+  },
+  {
+    title: "Legend",
+    type: "crime/drama",
+    rate: 7,
+    about:"Identical twin gangsters Ronald and Reginald Kray terrorize London during the 1960s.",
+    cast: [
+      { name: "Tom Hardy" },
+      { name: "Emily Browning" },
+      { name: "Taron Egerton"},
+      { name: "Millie Brady",},
+      {name: "Paul Anderson",},],
+  },
+  {
+    title: "Cruella",
+    type: "comedy/crime",
+    rate: 8,
+    about:"A live-action prequel feature film following a young Cruella de Vil.",
+    cast: [
+      { name: "Emma Stone" },
+      { name: "Emma Thompson" },
+      { name: "Joel Fry"},
+      { name: "Paul Walter Hauser",},
+      {name: "Emily Beecham",},],
+  },
+  {
+    title: "The Big Short",
+    type: "comedy/drama",
+    rate: 8,
+    about:"In 2006-2007 a group of investors bet against the US mortgage market. In their research, they discover how flawed and corrupt the market is.",
+    cast: [
+      { name: "Christian Bale" },
+      { name: "Steve Carell" },
+      { name: "Ryan Gosling"},
+      { name: "Brad Pitt",},
+      {name: "Rudy Eisenzopf",},],
+  },
+  {
+    title: "Margin Call",
+    type: "drama",
+    rate: 7,
+    about:"Follows the key people at an investment bank over a 24-hour period during the early stages of the 2008 financial crisis.",
+    cast: [
+      { name: "Zachary Quinto" },
+      { name: "Stanley Tucci" },
+      { name: "Kevin Spacey"},
+      { name: "Paul Bettany",},
+      {name: "Jeremy Irons",},],
+  },
+  {
+    title: "Inglourious Basterds",
+    type: "drama/war",
+    rate: 8,
+    about:"In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same.",
+    cast: [
+      { name: "Brad Pitt" },
+      { name: "Diane Kruger" },
+      { name: "Eli Roth"},
+      { name: "Mélanie Laurent",},
+      {name: "Christoph Waltz",},],
+  },
+  {
+    title: "Glass Onion",
+    type: "comedy/crime",
+    rate: 7,
+    about:"Famed Southern detective Benoit Blanc travels to Greece for his latest case.",
+    cast: [
+      { name: "Daniel Craig" },
+      { name: "Kate Hudson" },
+      { name: "Kathryn Hahn"},
+      { name: "Jessica Henwick",},
+      {name: "Edward Norton",},],
+  },
+  {
+    title: "Everything Everywhere All at Once",
+    type: "action/comedy",
+    rate: 8,
+    about:"A middle-aged Chinese immigrant is swept up into an insane adventure in which she alone can save existence by exploring other universes and connecting with the lives she could have led.",
+    cast: [
+      { name: "Michelle Yeoh" },
+      { name: "Stephanie Hsu" },
+      { name: "Jamie Lee Curtis"},
+      { name: "Ke Huy Quan",},
+      {name: "James Hong",},],
+  },
+  {
+    title: "Knives Out",
+    type: "comedy/crime",
+    rate: 8,
+    about:"A detective investigates the death of the patriarch of an eccentric, combative family.",
+    cast: [
+      { name: "Daniel Craig" },
+      { name: "Chris Evans" },
+      { name: "Ana de Armas"},
+      { name: "Jamie Lee Curtis",},
+      {name: "Riki Lindhome",},],
+  },
+  {
+    title: "Blonde",
+    type: "drama/romance",
+    rate: 6,
+    about:"The story of American actress Marilyn Monroe, covering her love and professional lives",
+    cast: [
+      { name: "Ana de Armas" },
+      { name: "Lily Fisher" },
+      { name: "Julianne Nicholson"},
+      { name: "Tygh Runyan",},
+      {name: "Sara Paxton",},],
+  },
+  {
+    title: "Don't Worry Darling",
+    type: "drama/thriller",
+    rate: 7,
+    about:"A 1950s housewife living with her husband in a utopian experimental community begins to worry that his glamorous company could be hiding disturbing secrets.",
+    cast: [
+      { name: "Florence Pugh" },
+      { name: "Harry Styles" },
+      { name: "Chris Pine"},
+      { name: "Olivia Wilde",},
+      {name: "Monroe Cline",},],
+  },
+  {
+    title: "Once Upon a Time in Hollywood",
+    type: "comedy/drama",
+    rate: 8,
+    about:"A faded television actor and his stunt double strive to achieve fame and success in the final years of Hollywood's Golden Age in 1969 Los Angeles.",
+    cast: [
+      { name: "Leonardo DiCaprio" },
+      { name: "Brad Pitt" },
+      { name: "Margot Robbie"},
+      { name: "Emile Hirsch",},
+      {name: "Margaret Qualley",},],
+  },
+  {
+    title: "Mad Max: Fury Road",
+    type: "action/sci-fi",
+    rate: 9,
+    about:"In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+    cast: [
+      { name: "Tom Hardy" },
+      { name: "Charlize Theron" },
+      { name: "Nicholas Hoult"},
+      { name: "Zoë Kravitz",},
+      {name: "Hugh Keays-Byrne",},],
+  },
 ];
 const addInfo = ()=>{
   for (let index = 0; index < movieData.length; index++) {
@@ -403,6 +583,9 @@ const creatFavPage = () => {
     <i class="bx bx-right-arrow"></i>
     <span class="trailer-span">Watch the trailer</span>
   </a>
+  <a class="watch-btn delete-btn">
+  <i class='bx bx-trash'></i>
+</a>
 </div>`)
     );
     boxDiv.on("click", creatPlayPage);
@@ -422,7 +605,7 @@ const creatSignPage = () => {
   signFlip.hide();
   logInPage.css("display", "grid");
   $(`.intro`).css("display", "flex");
-  $(`.pass-input,.email-input`).css({ border: "0.6px solid #f8a92a" });
+  $(`.pass-input,.email-input`).css({ "border": "0.6px solid #f8a92a" });
 };
 
 // Return Home Btn
@@ -447,7 +630,8 @@ localStorage["user"]
   const userInfoObj = {
     username: newUserName.val(),
     email:newUserEmail.val(),
-    password:newUserPass.val()
+    password:newUserPass.val(),
+    
   }
 // Check For User Login
 const checkForUserLogin = () => {
@@ -464,6 +648,9 @@ const checkForUserLogin = () => {
         if(newUserName.val()){
         if (element.username === newUserName.val()) {
           $(`.name-input`).css({ "border": "0.6px solid #ff0000ba" })
+          newUserName.val("")
+          newUserEmail.val("")
+          newUserPass.val("")
         }
 
         if(element.username !== newUserName.val() && element.email !== newUserEmail.val() &&element.password !==newUserPass.val() ){
@@ -473,6 +660,8 @@ const checkForUserLogin = () => {
       }}else if (element.email !== userEmail.val() || element.password !==userPass.val()) {
         $(`.email-input`).css({ "border": "0.6px solid #ff0000ba" }); 
          $(`.pass-input`).css({ "border": "0.6px solid #ff0000ba" });
+         userEmail.val("")
+         userPass.val("")
       }else {
        
         $(`.intro`).css("display", "flex")

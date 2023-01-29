@@ -1,0 +1,9 @@
+title : Everything Everywhere All at Once
+cast1 :Michelle Yeoh
+cast2 :Stephanie Hsu
+cast3 :Jamie Lee Curtis
+cast4 :Ke Huy Quan
+cast5 :James Hong
+type  :action/comedy
+rate  :8
+description:A middle-aged Chinese immigrant is swept up into an insane adventure in which she alone can save existence by exploring other universes and connecting with the lives she could have led.

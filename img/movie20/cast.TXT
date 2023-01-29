@@ -1,0 +1,9 @@
+title: Cruella
+cast1:Emma Stone
+cast2:Emma Thompson
+cast3:Joel Fry
+cast4:Paul Walter Hauser
+cast5:Emily Beecham
+type :comedy/crime
+rate :8
+A live-action prequel feature film following a young Cruella de Vil.description:

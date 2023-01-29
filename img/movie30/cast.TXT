@@ -1,0 +1,9 @@
+title : Mad Max: Fury Road
+cast1 :Tom Hardy
+cast2:Charlize Theron
+cast3:Nicholas Hoult
+cast4:Zoë Kravitz
+cast5:Hugh Keays-Byrne
+type:action/sci-fi
+rate:9
+description:In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.

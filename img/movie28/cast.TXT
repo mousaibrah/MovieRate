@@ -1,0 +1,9 @@
+title : Don't Worry Darling
+cast1 :Florence Pugh
+cast2 :Harry Styles
+cast3 :Chris Pine
+cast4 :Olivia Wilde
+cast5 :Monroe Cline
+type  : drama/thriller
+rate  : 7
+description: A 1950s housewife living with her husband in a utopian experimental community begins to worry that his glamorous company could be hiding disturbing secrets.

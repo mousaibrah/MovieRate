@@ -1,0 +1,9 @@
+title : Legend
+cast1 :Tom Hardy
+cast2:Emily Browning
+cast3:Taron Egerton
+cast4:Millie Brady
+cast5:Paul Anderson
+type:crime/drama
+rate:7
+description:Identical twin gangsters Ronald and Reginald Kray terrorize London during the 1960s.

@@ -1,0 +1,9 @@
+title : Once Upon a Time in Hollywood
+cast1 :Leonardo DiCaprio
+cast2:Brad Pitt
+cast3:Margot Robbie
+cast4:Emile Hirsch
+cast5:Margaret Qualley
+type:comedy/drama
+rate:8
+ision actor and his stunt double strive to achieve fame and success in the final years of Hollywood's Golden Age in 1969 Los Angeles.description:A faded telev

@@ -1,0 +1,9 @@
+title : Knives Out
+cast1 :Daniel Craig
+cast2 :Chris Evans
+cast3 :Ana de Armas
+cast4 :Jamie Lee Curtis
+cast5 :Riki Lindhome
+type  :comedy/crime
+rate  :8
+A detective investigates the death of the patriarch of an eccentric, combative family.description:

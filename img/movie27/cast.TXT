@@ -1,0 +1,9 @@
+title : Blonde
+cast1 :Ana de Armas
+cast2 :Lily Fisher
+cast3 :Julianne Nicholson
+cast4 :Tygh Runyan
+cast5 :Sara Paxton
+type  :drama/romance
+rate  :6
+description:The story of American actress Marilyn Monroe, covering her love and professional lives

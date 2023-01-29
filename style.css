@@ -14,6 +14,11 @@
   --body-color: #1e1e2a;
   --container-color: #2d2e37;
   --text-color: #fcfeff;
+  /* --body-color:#fcfeff;
+  --text-color: #f8a92a;
+  --main-color: #2bd6fc;
+  --hover-color: #0fc7f1;
+  --container-color: #9598b0; */
   
 }
 
@@ -702,6 +707,13 @@ section.login-page {
   .movie-type {
     font-size: 12px;
   }
+  .movie-box {
+    height: 250px;
+  }
+  .movies-content {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
   .heading {
     padding: 2px 14px;
   }
@@ -721,6 +733,14 @@ section.login-page {
   .flip-login{
     width: 350px
   }
+  .intro{
+    width:395px;
+  }
+  .intro-message{
+    width: 350px;
+    font-size: 18px;
+  }
+
 }
 @media (max-width: 408px) {
   * {
@@ -782,5 +802,11 @@ section.login-page {
   }
   .about-movie p {
     text-align: justify;
+  }
+  .intro{
+    width: 350px;
+  }
+  .intro-message{
+    width: 300px;
   }
 }

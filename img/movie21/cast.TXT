@@ -1,0 +1,9 @@
+title: The Big Short
+cast1:Christian Bale
+cast2:Steve Carell
+cast3:Ryan Gosling
+cast4:Brad Pitt
+cast5:Rudy Eisenzopf
+type :comedy/drama
+rate :8
+description:In 2006-2007 a group of investors bet against the US mortgage market. In their research, they discover how flawed and corrupt the market is.

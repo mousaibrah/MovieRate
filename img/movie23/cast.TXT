@@ -1,0 +1,9 @@
+title : Inglourious Basterds
+cast1 :Brad Pitt
+cast2 :Diane Kruger
+cast3 :Eli Roth
+cast4 :Mélanie Laurent
+cast5 :Christoph Waltz
+type  :drama/war
+rate  :8
+description:In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same.

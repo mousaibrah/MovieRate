@@ -1,0 +1,9 @@
+title : Glass Onion
+cast1 :Daniel Craig
+cast2 :Kate Hudson
+cast3 :Kathryn Hahn
+cast4 :Jessica Henwick
+cast5 :Edward Norton
+type  :comedy/crime
+rate  :7
+description:Famed Southern detective Benoit Blanc travels to Greece for his latest case.

@@ -1,0 +1,9 @@
+title : The Batman
+cast1 :Paul Dano
+cast2:Robert Pattinson
+cast3:Zoë Kravitz
+cast4:Jeffrey Wright
+cast5:Colin Farrell
+type:action/crime
+rate:8
+description:When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.
