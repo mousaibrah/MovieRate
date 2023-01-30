@@ -456,13 +456,13 @@ const CreatMovieBox = (element, index) => {
   boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
   boxDiv.append(
     $(`<div class="box-text">
-<h2 class="movie-title">${element.title}</h2>
-<span class="movie-type">${element.type}</span>
-<a href="${element.trailer}" target="_blank" class="watch-btn play-btn">
-  <i class="bx bx-right-arrow"></i>
-  <span class="trailer-span">Watch the trailer</span>
-</a>
-</div>`)
+          <h2 class="movie-title">${element.title}</h2>
+          <span class="movie-type">${element.type}</span>
+          <a href="${element.trailer}" target="_blank" class="watch-btn play-btn">
+           <i class="bx bx-right-arrow"></i>
+           <span class="trailer-span">Watch the trailer</span>
+          </a>
+        </div>`)
   );
   boxDiv.on("click", creatPlayPage);
   return boxDiv[0];
@@ -577,9 +577,9 @@ const creatFavPage = () => {
     boxDiv.append($(`<img src="${element.src}" class="movie-box-img" />`));
     boxDiv.append(
       $(`<div class="box-text">
-  <h2 class="movie-title">${element.title}</h2>
-  <span class="movie-type">${element.type}</span>
-  <a href="${element.trailer}" target="_blank" class="watch-btn play-btn">
+      <h2 class="movie-title">${element.title}</h2>
+        <span class="movie-type">${element.type}</span>
+         <a href="${element.trailer}" target="_blank" class="watch-btn play-btn">
     <i class="bx bx-right-arrow"></i>
     <span class="trailer-span">Watch the trailer</span>
   </a>
